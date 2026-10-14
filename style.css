@@ -1,3 +1,6 @@
+
+
+
 .Hero-section {  /* översta hero-sektionen */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/space.jpg') no-repeat center center/cover;
     min-height: 180px; 
@@ -102,6 +105,20 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     color: rgb(9, 1, 1);
     padding: 10px;
     border: 1px solid #1789a9;
+}
+
+#education-table td {  /* tabell med utbildningar tabellrubrik unikt id */
+    padding: 10px;
+    border: 1px solid #1789a9;
+    color:rgb(43, 23, 141);
+}
+
+#education-table tbody tr:nth-child(even) {  /* tabell med utbildningar tabellrubrik unikt id */
+    background-color: #9f96e9;
+}
+#education-table tbody tr hover {  /* tabell med utbildningar tabellrubrik unikt id */
+    background-color: #3150ea;
+    transition: background-color 0.3s ease;
 }
 
 /* stor skärm (min 768px) */
