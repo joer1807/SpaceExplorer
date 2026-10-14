@@ -18,4 +18,4 @@ count: Fetch a specified number of random images (max: 100). Cannot be used with
 
 concept_tags: Boolean to include concept tags derived from the explanation text.
 
-thumbs: Boolean to include video thumbnails.
+thumbs: Boolean to include video thumbnails. 
