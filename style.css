@@ -27,7 +27,7 @@ nav {
     font-size: 16px;
     font-weight: bold;
     font-family: Arial, sans-serif;
-    color:black
+    color:black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,15 +54,25 @@ nav ul li {
 
 nav a {
     font-size: 20px;
-    background-color: transparent;
     text-decoration: none;
     color: rgb(235, 232, 232);
     transition: all 0.5s ease;
+    display: inline-block;
+
+      background: linear-gradient(90deg, rgb(235,232,232), rgb(23, 137, 169), rgb(235,232,232));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgb(235, 232, 232); /* Visar den gråvita färgen först */
 }
+
  nav a:hover {
-    color: rgb(23, 137, 169);
-    animation: glitterAnimation 1s infinite;
-    filter: drop-shadow(0 0 0.25rem rgb(23, 137, 169));
+    -webkit-text-fill-color: transparent; /* Gör texten genomskinlig så glittret syns */
+    animation: glitterAnimation 1.5s linear infinite;
+    
+    /* Alla skuggor ligger nu korrekt på samma rad utan semikolon emellan */
+    filter: drop-shadow(0 0 8px rgb(23, 137, 169)) 
+            drop-shadow(0 0 15px rgb(23, 137, 169)) 
+            drop-shadow(0 0 25px rgb(23, 137, 169));
 }
 @keyframes glitterAnimation {
     0% {
