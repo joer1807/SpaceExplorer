@@ -84,12 +84,16 @@ nav a {
     }
 }
 
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
 #education-table {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
     border-collapse: collapse;
     width: 100%;
-    max-width 1000px;
-   
+    font-size: 14px;
 }
 
 
