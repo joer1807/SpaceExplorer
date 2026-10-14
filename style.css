@@ -1,4 +1,4 @@
-.Hero-section {
+.Hero-section {  /* översta hero-sektionen */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/space.jpg') no-repeat center center/cover;
     min-height: 180px; 
     height: auto;
@@ -7,37 +7,36 @@
     justify-content: center; 
     align-items: center;
     color: white;
-    padding: 20 px 15px;
+    padding: 20px 15px; 
     text-align: center;
     gap: 15px; 
 }
 
-header h1 {
+header h1 {   /* herosectionens titel */
     color: white;
     font-size: 30px; 
     margin: 0;
 }
 
-header p {
+header p {   /* herosectionens text */
     color: white;
     font-size: 20px; 
     margin: 0;
 }
 
-nav {
+nav {   /* navigeringsmenyn */
     font-size: 16px;
     font-weight: bold;
     font-family: Arial, sans-serif;
-    color:black;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     padding: 15px;
-
 }
 
-nav ul {
+nav ul {   /* navigeringsmenyns lista */
     display: flex;
     flex-direction: column; 
     justify-content: center;
@@ -48,25 +47,25 @@ nav ul {
     gap: 15px; 
 }
 
-nav ul li {
+nav ul li {  /* navigeringsmenyns lista element */
     margin: 0;
     color: rgb(18, 18, 18);
 }
 
-nav a {
+nav a {  /* navigeringsmenyns lista element */
     font-size: 20px;
     text-decoration: none;
     color: rgb(235, 232, 232);
     transition: all 0.5s ease;
     display: inline-block;
 
-      background: linear-gradient(90deg, rgb(235,232,232), rgb(23, 137, 169), rgb(235,232,232));
+    background: linear-gradient(90deg, rgb(235,232,232), rgb(23, 137, 169), rgb(235,232,232));
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgb(235, 232, 232); /* Visar den gråvita färgen först */
 }
 
- nav a:hover {
+nav a:hover {  /* navigeringsmenyns lista element vid hover */
     -webkit-text-fill-color: transparent; /* Gör texten genomskinlig så glittret syns */
     animation: glitterAnimation 1.5s linear infinite;
     
@@ -75,7 +74,8 @@ nav a {
             drop-shadow(0 0 15px rgb(23, 137, 169)) 
             drop-shadow(0 0 25px rgb(23, 137, 169));
 }
-@keyframes glitterAnimation {
+
+@keyframes glitterAnimation {  /* animering av glittret text */
     0% {
         background-position: 0% 50%;
     }
@@ -84,25 +84,27 @@ nav a {
     }
 }
 
-.table-container {
+.table-container {  /* tabell med utbildningar behållare */
     width: 100%;
     overflow-x: auto;
     margin: 20px 0;
 }
-#education-table {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+#education-table {  /* tabell med utbildningar unikt id */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* FIXAT: Tillagt semikolon */
     border-collapse: collapse;
     width: 100%;
     font-size: 14px;
 }
-#education-table th {
-    background-color:#1789a9;
+
+#education-table th {  /* tabell med utbildningar tabellrubrik unikt id */
+    background-color: #1789a9;
     color: rgb(9, 1, 1);
     padding: 10px;
     border: 1px solid #1789a9;
 }
 
-
+/* stor skärm (min 768px) */
 @media (min-width: 768px) {
     .Hero-section {
         height: 250px; 
