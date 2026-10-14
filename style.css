@@ -95,6 +95,12 @@ nav a {
     width: 100%;
     font-size: 14px;
 }
+#education-table th {
+    background-color:#1789a9;
+    color: rgb(9, 1, 1);
+    padding: 10px;
+    border: 1px solid #1789a9;
+}
 
 
 @media (min-width: 768px) {
