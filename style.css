@@ -84,6 +84,14 @@ nav a {
     }
 }
 
+#education-table {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    border-collapse: collapse;
+    width: 100%;
+    max-width 1000px;
+   
+}
+
 
 @media (min-width: 768px) {
     .Hero-section {
