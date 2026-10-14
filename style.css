@@ -1,12 +1,13 @@
 .Hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/space.jpg') no-repeat center center/cover;
     min-height: 180px; 
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
     color: white;
-    padding: 15px;
+    padding: 20 px 15px;
     text-align: center;
     gap: 10px; 
 }
