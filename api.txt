@@ -1,0 +1,21 @@
+
+
+https://api.nasa.gov/planetary/apod
+
+api anrop url  https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2023-10-01
+
+
+
+Common Parameters:
+
+api_key: Your unique API key (required). Use DEMO_KEY for testing.
+
+date: Fetch content for a specific date (format: YYYY-MM-DD). Defaults to today's date.
+
+start_date and end_date: Fetch content for a date range. Cannot be used with date.
+
+count: Fetch a specified number of random images (max: 100). Cannot be used with date or date ranges.
+
+concept_tags: Boolean to include concept tags derived from the explanation text.
+
+thumbs: Boolean to include video thumbnails.
