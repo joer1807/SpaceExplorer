@@ -169,7 +169,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 }
 
 */bild blocket i kontaktsidan*/
-
+*/en y behållare*/
 .contact-image-box {
     width: 100%;
    display: flex;
@@ -177,7 +177,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
    align-items: center;
    margin: 10px;    
 }
-
+*/bilden ska ligga i*/
 .contact-page-wrapper {
     display: flex;
     flex-direction: column;
@@ -185,8 +185,15 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     max-width: 700px;
     margin: 30px auto;
     padding: 0 15px;
-
-
+    
+*/bilden */
+.contact-image-box img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
 
 
