@@ -125,10 +125,11 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 //kontaktsidans formulär börjar här
 
 .contact-form {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(30, 207, 231, 0.5);
     border-radius: 10px;
+    padding: 20px;
 }
-.kontaktformular {
+#kontaktformular {
     display: flex;
     flex-direction: column;
     justify-content: center;
