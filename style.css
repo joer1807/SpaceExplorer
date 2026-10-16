@@ -1,6 +1,3 @@
-
-
-
 .Hero-section {  /* översta hero-sektionen */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/space.jpg') no-repeat center center/cover;
     min-height: 180px; 
@@ -79,12 +76,8 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 }
 
 @keyframes glitterAnimation {  /* animering av glittret text */
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 200% center;
-    }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% center; }
 }
 
 /* html kontaktsidan börjar här*/
@@ -95,8 +88,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 }
 
 #education-table {  /* tabell med utbildningar unikt id */
-    fonst-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* FIXAT: Tillagt semikolon */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     border-collapse: collapse;
     width: 100%;
     font-size: 14px;
@@ -112,7 +104,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 #education-table td {  /* tabell med utbildningar tabellrubrik unikt id */
     padding: 10px;
     border: 1px solid #1789a9;
-    color:rgb(43, 23, 141);
+    color: rgb(43, 23, 141);
 }
 
 #education-table tbody tr:nth-child(even) {  /* tabell med utbildningar tabellrubrik unikt id */
@@ -123,35 +115,47 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     transition: background-color 0.3s ease;
 }
 
+/* BAS-STYLING FÖR KONTAKTSIDAN (Mobil först) */
+
+/* FIXAT KOMMENTAR: Ny behållare runt form + bild */
+.contact-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 40px auto; /*  Tillagt semikolon */
+    padding: 0 40px;
+    box-sizing: border-box;
+}
 
 .contact-form {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr; /* Info och formulär sida vid sida inuti den turkosa ytan */
     gap: 15px;
     background-color: rgba(30, 207, 231, 0.5);
     border-radius: 10px;
     padding: 15px;
-    width: 100%; /* Tvingar sektionen att ta upp sin beskärda del */
+    width: 100%; 
     box-sizing: border-box;
 }
+
 .contact-info, .fun-facts, #kontaktformular {
     font-size: 15px;
     background-color: rgba(34, 43, 72, 0.5);
     padding: 10px 15px;
     border-radius: 10px;
     box-sizing: border-box;
+}
+
+.contact-info {
     margin: 10px;
 }
 
-
-.contact-info {
-  margin: 10px;
-}
 .fun-facts {
-    grid-column: span 2;
+    grid-column: span 2; /* Fyller hela nederraden */
     line-height: 1.5;
-    margin : 10px;
-    
+    margin: 10px;
 }
 
 #kontaktformular {
@@ -161,78 +165,50 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     align-items: stretch;
     gap: 5px;
     margin: 10px;
-
 }
 
-*/bild blocket i kontaktsidan*/
-*/en y behållare*/
+/* FIXAT KOMMENTAR: Bildblocket */
 .contact-image-box {
     width: 100%;
-   display: flex;
-    
-}
-*/bilden ska ligga i*/
-.contact-page-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 40px auto 
-    padding: 0 20px;
     box-sizing: border-box;
 }
 
-*/bilden */
+/* FIXAT KOMMENTAR: Själva bilden */
 .contact-image-box img {
     width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
+    height: 100%;
+    min-height: 350px;
+    max-height: 480px;
+    object-fit: cover; 
     border-radius: 10px;
 }
 
-
-
-/* stor skärm (min 768px) */
+/* RESPONSIVITET (Skärmar från 768px och uppåt) */
 @media (min-width: 768px) {
     .Hero-section {
         height: 250px; 
         padding: 30px;
     }
 
+    header h1 { font-size: 40px; }
+    header p { font-size: 20px; }
+    nav { padding: 20px; }
+    nav ul { flex-direction: row; gap: 0; }
+    nav ul li { margin: 0 20px; }
+
+    /* Lägger formulär och bild SIDA VID SIDA på datorer */
     .contact-page-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center stretch;
-        gap: 30px;
-        max-width: 700px;
-        margin: 20px auto;
-       
-
+        flex-direction: row !important; 
+        justify-content: center; 
+        align-items: stretch; 
     }
-
-    header h1 { 
-        font-size: 40px; 
+    
+    .contact-form {
+        flex: 1; /* Tar 50% av bredden */
     }
-
-    header p {
-        font-size: 20px; 
-    }
-
-    nav {
-        padding: 20px;
-    }
-
-    nav ul {
-        flex-direction: row; 
-        gap: 0; 
-    }
-
-    nav ul li {
-        margin: 0 20px; 
+    
+    .contact-image-box {
+        flex: 1; /* Tar 50% av bredden */
     }
 }
-*/grid area i kontaktsidan*/
-.contact-form {
-        grid-template-columns: 1fr 1fr 1fr; /* FIXAT: Ändrat från grid-templates-columns */
-    }
