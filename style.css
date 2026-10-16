@@ -140,18 +140,32 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     box-sizing: border-box;
 }
 
-.contact-info, .fun-facts, #kontaktformular {
+    .contact-info, .fun-facts, #kontaktformular {
     font-size: 15px;
-    background-color: rgba(34, 43, 72, 0.5);
-    padding: 10px 15px;
-    border-radius: 10px;
+    background-color: rgba(240, 245, 255, 0.9); 
+    border: 1px solid rgba(23, 137, 169, 0.5); 
+    box-shadow: 0 0 15px rgba(23, 137, 169, 0.2);
+    padding: 20px; 
+    border-radius: 8px;
     box-sizing: border-box;
     margin: 0;
+    transition: all 0.3s ease;
 }
+
+
+.contact-info:hover, .fun-facts:hover, #kontaktformular:hover {
+    border-image: linear-gradient(90deg, rgb(235,232,232), rgb(23, 137, 169), rgb(235,232,232)) 1;
+    animation: glitterAnimation 1.5s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(23, 137, 169, 0.6)) 
+            drop-shadow(0 0 20px rgba(23, 137, 169, 0.3));
+    
+    transform: translateY(-2px); /* Ger en mjuk lyftande känsla */
+}
+
+
 
 .contact-info {
     grid-column: span 1; /* Fyller hela nederraden */
-    margin: 10px;
 }
 
 .fun-facts {
@@ -166,6 +180,10 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     align-items: stretch;
     gap: 5px;
     margin: 8px;
+}
+#kontaktformular:hover {
+    border-image: linear-gradient(90deg, rgb(235,232,232), rgb(23, 137, 169), rgb(235,232,232)) 1;
+    animation: glitterAnimation 1.5s linear infinite; /* Använder din befintliga animation */
 }
 
 /* FIXAT KOMMENTAR: Bildblocket */
@@ -216,8 +234,8 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     }
     .contact-image-box img {
         height: 100%;
-        min-height: none;
-        max-height: 0;
+        min-height: 0;
+        max-height: none;
         object-fit: cover;
     }
 }
