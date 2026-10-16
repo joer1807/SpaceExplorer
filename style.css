@@ -178,7 +178,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
    margin: 10px;    
 }
 
-.contact- page-image {
+.contact-page-wrapper {
     display: flex;
     flex-direction: column;
     gap: 30px;
