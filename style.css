@@ -178,6 +178,14 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
    margin: 10px;    
 }
 
+.contact- page-image {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0 15px;
+
 
 
 
