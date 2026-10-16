@@ -125,12 +125,13 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 
 
 .contact-form {
-    
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    gap: 20px;
+    gap: 15px;
     background-color: rgba(30, 207, 231, 0.5);
     border-radius: 10px;
+    padding: 15px;
+    width: 100%; /* Tvingar sektionen att ta upp sin beskärda del */
     box-sizing: border-box;
 }
 .contact-info, .fun-facts, #kontaktformular {
@@ -174,10 +175,12 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 .contact-page-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    max-width: 700px;
-    margin: 30px auto;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto 
     padding: 0 20px;
+    box-sizing: border-box;
+}
 
 */bilden */
 .contact-image-box img {
