@@ -203,6 +203,17 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
         padding: 30px;
     }
 
+    .contact-page-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center stretch;
+        gap: 30px;
+        max-width: 700px;
+        margin: 20px auto;
+       
+
+    }
+
     header h1 { 
         font-size: 40px; 
     }
