@@ -69,7 +69,6 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     -webkit-text-fill-color: transparent; /* Gör texten genomskinlig så glittret syns */
     animation: glitterAnimation 1.5s linear infinite;
     
-    /* Alla skuggor ligger nu korrekt på samma rad utan semikolon emellan */
     filter: drop-shadow(0 0 8px rgb(23, 137, 169)) 
             drop-shadow(0 0 15px rgb(23, 137, 169)) 
             drop-shadow(0 0 25px rgb(23, 137, 169));
@@ -110,28 +109,33 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 #education-table tbody tr:nth-child(even) {  /* tabell med utbildningar tabellrubrik unikt id */
     background-color: #9f96e9;
 }
-#education-table tbody tr:hover {  /* tabell med utbildningar tabellrubrik unikt id */
+
+#education-table tbody tr:hover {  
     background-color: #3150ea;
     transition: background-color 0.3s ease;
 }
 
+/* FIXAT: Texten blir nu vit vid hover så att den syns mot den mörka bakgrunden */
+#education-table tbody tr:hover td {  
+    color: #ffffff;
+}
+
 /* BAS-STYLING FÖR KONTAKTSIDAN (Mobil först) */
 
-/* FIXAT KOMMENTAR: Ny behållare runt form + bild */
 .contact-page-wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
     max-width: 100%;
-    margin: 40px auto; /*  Tillagt semikolon */
+    margin: 40px auto; 
     padding: 0 15px;
     box-sizing: border-box;
 }
 
 .contact-form {
     display: grid;
-    grid-template-columns: 1fr; /* Info och formulär sida vid sida inuti den turkosa ytan */
+    grid-template-columns: 1fr; 
     gap: 15px;
     background-color: rgba(30, 207, 231, 0.5);
     border-radius: 10px;
@@ -140,7 +144,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     box-sizing: border-box;
 }
 
-    .contact-info, .fun-facts, #kontaktformular {
+.contact-info, .fun-facts, #kontaktformular {
     font-size: 15px;
     background-color: rgba(240, 245, 255, 0.9); 
     border: 1px solid rgba(23, 137, 169, 0.5); 
@@ -148,28 +152,24 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     padding: 20px; 
     border-radius: 8px;
     box-sizing: border-box;
-    margin: 0;
+    margin: 0; /* FIXAT: Alla boxar har nu samma marginaler */
     transition: all 0.3s ease;
 }
 
-
+/* FIXAT: Ersatt border-image med en snygg border+skugga så att hörnen förblir runda */
 .contact-info:hover, .fun-facts:hover, #kontaktformular:hover {
-    border-image: linear-gradient(90deg, rgb(235,232,232), rgb(23, 137, 169), rgb(235,232,232)) 1;
-    animation: glitterAnimation 1.5s linear infinite;
+    border-color: rgb(23, 137, 169);
     filter: drop-shadow(0 0 10px rgba(23, 137, 169, 0.6)) 
             drop-shadow(0 0 20px rgba(23, 137, 169, 0.3));
-    
-    transform: translateY(-2px); /* Ger en mjuk lyftande känsla */
+    transform: translateY(-2px); 
 }
 
-
-
 .contact-info {
-    grid-column: span 1; /* Fyller hela nederraden */
+    grid-column: span 1; 
 }
 
 .fun-facts {
-    grid-column: span 1; /* Fyller hela nederraden */
+    grid-column: span 1; 
     line-height: 1.5;
 }
 
@@ -179,21 +179,39 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     justify-content: flex-start;
     align-items: stretch;
     gap: 5px;
-    margin: 8px;
-}
-#kontaktformular:hover {
-    border-image: linear-gradient(90deg, rgb(235,232,232), rgb(23, 137, 169), rgb(235,232,232)) 1;
-    animation: glitterAnimation 1.5s linear infinite; /* Använder din befintliga animation */
 }
 
-/* FIXAT KOMMENTAR: Bildblocket */
+/* FIXAT: Formulär-inputs och textareas görs snyggare för bättre UX */
+#kontaktformular input[type="text"],
+#kontaktformular input[type="email"],
+#kontaktformular textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#kontaktformular input[type="submit"] {
+    background-color: #1789a9;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#kontaktformular input[type="submit"]:hover {
+    background-color: #126d87;
+}
+
 .contact-image-box {
     width: 100%;
     display: flex;
     box-sizing: border-box;
 }
 
-/* FIXAT KOMMENTAR: Själva bilden */
 .contact-image-box img {
     width: 100%;
     height: auto;
@@ -215,7 +233,6 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     nav ul { flex-direction: row; gap: 0; }
     nav ul li { margin: 0 20px; }
 
-    /* Lägger formulär och bild SIDA VID SIDA på datorer */
     .contact-page-wrapper {
         flex-direction: row !important; 
         justify-content: center; 
@@ -227,10 +244,15 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
         grid-template-columns: 1fr 1fr; 
     }
     
+    /* GÖR ATT FORMULÄRET TAR UPP HELA HÖGERKOLUMNEN I DEN TURKOSA BOXEN */
+    #kontaktformular {
+        grid-row: span 2;
+    }
+    
     .contact-image-box {
         flex: 1; 
         display: flex;
-        align-items:stretch; 
+        align-items: stretch; 
     }
     .contact-image-box img {
         height: 100%;

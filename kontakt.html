@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="sv">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakta oss</title>
 
-
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
-
+    <!-- Tillagt 'defer' så att JavaScriptet väntar på att HTML-koden laddats klart -->
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -27,97 +25,96 @@
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
-
-
     </header>
 
     <main> 
-    <section>
-        <h2>Våra utbildningar</h2>
-        <p>Vi har flera olika utbildningar anpassade för målgruppen. Det finns utbildningar för studenter, lärare,
-            barn och ungdomar. Vi har också utbildningar inom olika ämnen, såsom astronomi, astrofysik, astrofysik för
-            barn och astrofysik för lite större barn.</p>
-        <br>
-        <div class = "table-container">
-
-        <table id="education-table">
+        <section>
+            <h2>Våra utbildningar</h2>
+            <p>Vi har flera olika utbildningar anpassade för målgruppen. Det finns utbildningar för studenter, lärare,
+                barn och ungdomar. Vi har också utbildningar inom olika ämnen, såsom astronomi, astrofysik, astrofysik för
+                barn och astrofysik för lite större barn.</p>
             
-            <thead>
-                <tr>
-                    <th>Fysik är kul- för barn</th>
-                    <th>Allt är fysik- för ungdomar</th>
-                    <th>Fysikens under- för gymnasiestudenter</th>
-                    <th>Hur elever upptäcker fysiken- för lärare</th>
-                </tr>
+            <div class="table-container">
+                <table id="education-table">
+                    <thead>
+                        <tr>
+                            <th>Fysik är kul- för barn</th>
+                            <th>Allt är fysik- för ungdomar</th>
+                            <th>Fysikens under- för gymnasiestudenter</th>
+                            <th>Hur elever upptäcker fysiken- för lärare</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Experiment med vatten och luft.</td>
+                            <td>Hur fungerar tyngdlöshet?</td>
+                            <td>Kvantfysik och astrofysik.</td>
+                            <td>Pedagogiska verktyg och lektionsplaner.</td>
+                        </tr>
+                        <tr>
+                            <td>Tisdagar 10-12:00 och torsdagar 10-12</td>
+                            <td>Måndagar 10-12:00 och torsdagar 14-16</td>
+                            <td>Måndagar 8-10:00 och fredagar 8-10</td>
+                            <td>Onsdagar heldag 8-16:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-            </thead>
-            <tbody>
+        <!-- 1. Huvudbehållaren som lägger sektionen och bilden SIDA VID SIDA -->
+        <div class="contact-page-wrapper">
 
-                <tr>
-                    <td>Experiment med vatten och luft.</td>
-                    <td>Hur fungerar tyngdlöshet?</td>
-                    <td>Kvantfysik och astrofysik.</td>
-                    <td>Pedagogiska verktyg och lektionsplaner.</td>
-                </tr>
-                <tr>
-                    <td>Tisdagar 10-12:00 och torsdagar 10-12</td>
-                    <td>Måndagar 10-12:00 och torsdagar 14-16</td>
-                    <td>Måndagar 8-10:00 och fredagar 8-10</td>
-                    <td>Onsdagar heldag 8-16:00</td>
-                </tr>
+            <!-- 2. Sektionen med den turkosa bakgrunden (VÄNSTER SIDA) -->
+            <section class="contact-form">
+                
+                <!-- Box 1: Kontaktinfo -->
+                <div class="contact-info">
+                    <h2>Hitta oss</h2>
+                    <p><strong>Adress:</strong> Rymdgatan 42, 169 51 Solna, Stockholm</p>
+                    <p><strong>Telefon:</strong> +46 70 123 4567</p>
+                    <p><strong>E-post:</strong> spaceexplorer@gmail.com</p>
+                </div>
 
-            </tbody>
-
-        </table>
-        </div>
-    </section>
-</main>
-    
-    <!-- 1. Huvudbehållaren som lägger sektionen och bilden SIDA VID SIDA -->
-<div class="contact-page-wrapper">
-
-    <!-- 2. Sektionen med den turkosa bakgrunden (VÄNSTER SIDA) -->
-    <section class="contact-form">
-        
-        <!-- Box 1: Kontaktinfo -->
-        <div class="contact-info">
-            <h2>Hitta oss</h2>
-            <p><strong>Adress:</strong> Rymdgatan 42, 169 51 Solna, Stockholm</p>
-            <p><strong>Telefon:</strong> +46 70 123 4567</p>
-            <p><strong>E-post:</strong> spaceexplorer@gmail.com</p>
-        </div>
-
-        <!-- Box 2: Formuläret -->
-        <form id="kontaktformular">
-            <h2>Kontakta oss</h2>
-            <p>Fyll i formuläret nedan för att kontakta oss.</p>
+                <!-- Box 2: Formuläret -->
+                <form id="kontaktformular">
+                    <h2>Kontakta oss</h2>
+                    <p>Fyll i formuläret nedan för att kontakta oss.</p>
+                   
+                    <label for="name">Namn:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">E-post:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Meddelande:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <input type="submit" value="Skicka">
+                </form>
            
-            <label for="name">Namn:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">E-post:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Meddelande:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <input type="submit" value="Skicka">
-        </form>
-   
-        <!-- Box 3: Rolig fakta -->
-        <div class="fun-facts">
-            <h2>Fun-facts</h2>
-            <p>Lägg in text här</p>
-        </div>
+                <!-- Box 3: Rolig fakta -->
+                <div class="fun-facts">
+    <h2>Fun-facts</h2>
+    <ul>
+        <li><strong>Tystnad i rymden:</strong> Rymden är helt tyst eftersom det inte finns någon atmosfär eller luft som kan transportera ljudvågor.</li>
+        <li><strong>Hetaste planeten:</strong> Venus är solsystemets varmaste planet med en yttemperatur på runt 450 °C, trots att Merkurius ligger närmare solen.</li>
+        <li><strong>Diamantregn:</strong> På planeterna Neptunus och Uranus är trycket så extremt högt att det bokstavligen regnar diamanter i atmosfären.</li>
+        <li><strong>Enorm vulkan:</strong> Solsystemets största kända vulkan, Olympus Mons, ligger på Mars och är tre gånger så hög som Mount Everest.</li>
+        <li><strong>Krympande måne:</strong> Jordens måne krymper långsamt i takt med att dess inre svalnar, vilket orsakar små månbävningar.</li>
+        <li><strong>Footprints för evigt:</strong> Fotspåren som astronauterna lämnade på månen kan finnas kvar i miljontals år eftersom det inte finns någon vind som blåser bort dem.</li>
+    </ul>
+</div>
 
-    </section> <!-- HÄR stängs sektionen korrekt -->
+            </section> <!-- HÄR stängs sektionen korrekt -->
 
-    <!-- 3. Bildbehållaren (HÖGER SIDA) -->
-    <div class="contact-image-box">
-        <img src="images/space.jpg" alt="space" class="contact-image">
-    </div>
+            <!-- 3. Bildbehållaren (HÖGER SIDA) -->
+            <div class="contact-image-box">
+                <img src="images/space.jpg" alt="space" class="contact-image">
+            </div>
 
-</div> <!-- HÄR stängs hela wrappern sist av allt -->
+        </div> <!-- HÄR stängs hela wrappern sist av allt -->
+    </main>
 
     <footer class="footer">
         <div class="footer-content">
@@ -131,11 +128,6 @@
             </ul>
         </nav>
     </footer>
-    
 
 </body>
-
-
-
-
 </html>
