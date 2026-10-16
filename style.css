@@ -125,13 +125,13 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     width: 100%;
     max-width: 100%;
     margin: 40px auto; /*  Tillagt semikolon */
-    padding: 0 40px;
+    padding: 0 15px;
     box-sizing: border-box;
 }
 
 .contact-form {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Info och formulär sida vid sida inuti den turkosa ytan */
+    grid-template-columns: 1fr; /* Info och formulär sida vid sida inuti den turkosa ytan */
     gap: 15px;
     background-color: rgba(30, 207, 231, 0.5);
     border-radius: 10px;
@@ -146,16 +146,17 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     padding: 10px 15px;
     border-radius: 10px;
     box-sizing: border-box;
+    margin: 0;
 }
 
 .contact-info {
+    grid-column: span 1; /* Fyller hela nederraden */
     margin: 10px;
 }
 
 .fun-facts {
-    grid-column: span 2; /* Fyller hela nederraden */
+    grid-column: span 1; /* Fyller hela nederraden */
     line-height: 1.5;
-    margin: 10px;
 }
 
 #kontaktformular {
@@ -164,7 +165,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     justify-content: flex-start;
     align-items: stretch;
     gap: 5px;
-    margin: 10px;
+    margin: 8px;
 }
 
 /* FIXAT KOMMENTAR: Bildblocket */
@@ -177,9 +178,8 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 /* FIXAT KOMMENTAR: Själva bilden */
 .contact-image-box img {
     width: 100%;
-    height: 100%;
-    min-height: 350px;
-    max-height: 480px;
+    height: auto;
+    min-height: 250px;
     object-fit: cover; 
     border-radius: 10px;
 }
@@ -205,10 +205,19 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     }
     
     .contact-form {
-        flex: 1; /* Tar 50% av bredden */
+        flex: 1; 
+        grid-template-columns: 1fr 1fr; 
     }
     
     .contact-image-box {
-        flex: 1; /* Tar 50% av bredden */
+        flex: 1; 
+        display: flex;
+        align-items:stretch; 
+    }
+    .contact-image-box img {
+        height: 100%;
+        min-height: none;
+        max-height: 0;
+        object-fit: cover;
     }
 }
