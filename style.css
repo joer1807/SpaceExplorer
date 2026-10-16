@@ -123,43 +123,39 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 }
 
 
-
 .contact-form {
     display: grid;
-    grid-templates-columns: 1fr 1fr 1fr;
+    grid-templates-columns: 1fr;
     background-color: rgba(30, 207, 231, 0.5);
     border-radius: 10px;
     padding: 5px;
     margin: 20px 0;
 }
+.contact-info, .fun-facts, #kontaktformular {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding:20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.fun-facts {
+    line-height: 1.5;
+}
+
+.contact-info {
+  margin: 8px;
+}
+.fun-facts {
+    line-height: 1.5;
+}
+
 #kontaktformular {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-    border-radius: 10px;
-}
+    align-items: stretch;
+    gap: 10px;
 
-.fun-facts {
-    display: grid;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-.contact-info {
-    display: grid;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-    border-radius: 10px;
 }
 
 
@@ -194,3 +190,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
         margin: 0 20px; 
     }
 }
+*/grid area i kontaktsidan*/
+.contact-form {
+        grid-template-columns: 1fr 1fr 1fr; /* FIXAT: Ändrat från grid-templates-columns */
+    }
