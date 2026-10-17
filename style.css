@@ -263,13 +263,16 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 
 /*puff grid section börjar här mobil first */
 #puff-grid-section {
+    background-color: rgba(240, 245, 255, 0.9); 
+    border: 1px solid rgba(23, 137, 169, 0.5); 
+    box-shadow: 30px rgba(23, 137, 169, 0.2);
     display: grid;
     grid-template-columns: repeat (3, 1fr);
     gap: 20px;
     width: 100%;
     max-width: 1200px;
     margin: 20px auto; 
-    padding: 0 15px;
+    padding: 20px;
     box-sizing: border-box;
 }
  
@@ -292,8 +295,6 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     border: 1px solid #16c79a;
 }
     
-
-
 
 
 /* RESPONSIVITET (Skärmar från 768px och uppåt) */
