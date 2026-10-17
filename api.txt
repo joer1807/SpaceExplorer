@@ -4,6 +4,8 @@ https://api.nasa.gov/planetary/apod
 
 api anrop url  https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2023-10-01
 
+tänk på att ändra datumet! 
+
 
 
 Common Parameters:
