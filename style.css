@@ -264,14 +264,14 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 /*puff grid section börjar här mobil first */
 #puff-grid-section {
     background-color: rgba(240, 245, 255, 0.9); 
-    border: 1px solid rgba(23, 137, 169, 0.5); 
+    border: 2px solid rgba(23, 137, 169, 0.5); 
     box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
     display: grid;
     grid-template-columns: repeat (3, 1fr);
     gap: 20px;
     width: 100%;
     max-width: 1200px;
-    margin: 20px auto; 
+    margin: 20px auto 20px 0;; 
     padding: 20px;
     box-sizing: border-box;
 }
@@ -280,7 +280,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 #puff-grid-section h2 {
     grid-column: 1 / -1; 
     font-size: 24px;
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
 }
 
     /* Puffar börjar här mobil first */
