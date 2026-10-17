@@ -221,7 +221,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 }
 
 .footer {
-    background-color: rgba(240, 245, 255, 0.9); 
+    background-color: rgba(49, 110, 232, 0.9); 
     border: 1px solid rgba(23, 137, 169, 0.5); 
     box-shadow: 0 0 15px rgba(23, 137, 169, 0.2);
     padding: 20px; 
@@ -232,7 +232,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 
