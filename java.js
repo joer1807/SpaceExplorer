@@ -4,11 +4,14 @@
 
 // Skapar en funktion som tar in ett datum som parameter
 
+// JavaScript code to display the NASA APOD
+// ska hämta APOD-data från api.nasa.gov
+
 document.addEventListener('DOMContentLoaded', fetchApod);
 
 async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
-    const apiUrl = 'https://nasa.gov';
+    const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
 
     try {
         const response = await fetch(apiUrl);
@@ -18,23 +21,30 @@ async function fetchApod() {
 
         const data = await response.json();
 
-        
         const titleElement = apodSection.querySelector('h2');
         titleElement.textContent = "Live in Space: " + data.title;
 
-        const imgElement = document.createElement('img');
-        imgElement.src = data.url;          
-        imgElement.alt = data.title;        
-        imgElement.style.maxWidth = '100%'; 
-        
-        //Lägg in bilden i sektion
-        apodSection.appendChild(imgElement);
+        // Kontrollera om det är en video eller en bild
+        if (data.media_type === "video") {
+            const videoElement = document.createElement('iframe');
+            videoElement.src = data.url;
+            videoElement.width = "100%";
+            videoElement.height = "450px";
+            videoElement.style.border = "none";
+            videoElement.style.borderRadius = "8px";
+            apodSection.appendChild(videoElement);
+        } else {
+            const imgElement = document.createElement('img');
+            imgElement.src = data.url;          
+            imgElement.alt = data.title;        
+            imgElement.style.maxWidth = '100%'; 
+            imgElement.style.borderRadius = "8px";
+            apodSection.appendChild(imgElement);
+        }
 
-        //Skapa text-elementet (p) för förklaringen
+        // Skapa text-elementet (p) för förklaringen
         const textElement = document.createElement('p');
         textElement.textContent = data.explanation; 
-        
-        //Lägg in texten i din sektion
         apodSection.appendChild(textElement);
 
     } catch (error) {
