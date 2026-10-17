@@ -261,29 +261,26 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     gap: 5px;
 }
 
-*/ puff grid section börjar här */
-.puff-grid-section {
+*/ puff grid section börjar här mobil first */
+#puff-grid-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; 
     gap: 20px;
     width: 100%;
     max-width: 100%;
-    margin: 40px auto; 
+    margin: 20px auto; 
     padding: 0 15px;
     box-sizing: border-box;
 }
-.puff-grid-section h2 {
-    font-size: 20px;
-    margin: 0;
-}
-.puff-1 {
+
+#puff-1 {
     grid-column: span 1;
     
 }
-.puff-2 {
+#puff-2 {
     grid-column: span 1;
 }
-.puff-3 {
+#puff-3 {
     grid-column: span 1;
 }
 
