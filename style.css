@@ -273,16 +273,9 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     box-sizing: border-box;
 }
 
-#puff-1 {
-    grid-column: span 1;
+#puff-1 
     
-}
-#puff-2 {
-    grid-column: span 1;
-}
-#puff-3 {
-    grid-column: span 1;
-}
+
 
 
 
@@ -325,5 +318,16 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
         min-height: 0;
         max-height: none;
         object-fit: cover;
+    }
+
+    #puff-grid-section {
+        /* Slår om till 3 kolumner när skärmen är tillräckligt bred */
+        grid-template-columns: repeat(3, 1fr);
+        margin: 40px auto; 
+    }
+
+    #puff-grid-section h2 {
+        /* Tvingar rubriken att spänna över alla 3 kolumner på datorn */
+        grid-column: 1 / -1; 
     }
 }
