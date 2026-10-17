@@ -7,90 +7,116 @@
 // JavaScript code to display the NASA APOD
 // ska hämta APOD-data från api.nasa.gov
 
-document.addEventListener('DOMContentLoaded', fetchAsteroids);
+document.addEventListener('DOMContentLoaded', () => {
+    // Starta båda hämtningarna direkt när sidan öppnas
+    fetchApod();
+    fetchAsteroids();
+});
 
-async function fetchAsteroids() {
+// 1. DYNAMISK HÄMTNING AV RYMDBILDEN (APOD)
+async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
-    
-    // API-länk till Asteroids NeoWs med DEMO_KEY
+    const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
+
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('Fel vid APOD-fetch');
+        const data = await response.json();
+
+        apodSection.innerHTML = '';
+
+        const titleElement = document.createElement('h2');
+        titleElement.textContent = "Live in Space: " + data.title;
+        apodSection.appendChild(titleElement);
+
+        if (data.media_type === "video") {
+            const videoElement = document.createElement('iframe');
+            videoElement.src = data.url;
+            videoElement.width = "100%";
+            videoElement.height = "450px";
+            videoElement.style.border = "none";
+            videoElement.style.borderRadius = "8px";
+            apodSection.appendChild(videoElement);
+        } else {
+            const imgElement = document.createElement('img');
+            imgElement.src = data.url;          
+            imgElement.alt = data.title;        
+            imgElement.style.maxWidth = '100%'; 
+            imgElement.style.borderRadius = "8px";
+            apodSection.appendChild(imgElement);
+        }
+
+        const textElement = document.createElement('p');
+        textElement.textContent = data.explanation; 
+        apodSection.appendChild(textElement);
+
+    } catch (error) {
+        console.error(error);
+        apodSection.innerHTML = "<h2>Kunde inte ladda rymdbilden just nu.</h2>";
+    }
+}
+
+// 2. DYNAMISK HÄMTNING AV ALLA ASTEROIDER (NeoWs)
+async function fetchAsteroids() {
+    const asteroidSection = document.getElementById('asteroid-section');
+    // Din nya exakta API-länk som hämtar ett tidsintervall
     const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-17&end_date=2026-10-20&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
     try {
         const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('Kunde inte hämta asteroiddata från NASA');
-        }
-
+        if (!response.ok) throw new Error('Fel vid asteroid-fetch');
         const data = await response.json();
 
-        // Dynamiskt hämta dagens datum i formatet YYYY-MM-DD
-        const today = new Date().toISOString().split('T')[0];
-        
-        // Hämta listan över asteroider för just i dag
-        const asteroidsToday = data.near_earth_objects[today];
+        asteroidSection.innerHTML = '';
 
-        // Töm sektionen i din HTML
-        apodSection.innerHTML = '';
-
-        // 1. Skapa en ny spännande rubrik
+        // Skapa en huvudrubrik för asteroidavdelningen
         const titleElement = document.createElement('h2');
-        titleElement.textContent = "Live i rymden: Dagens asteroider (" + today + ")";
-        apodSection.appendChild(titleElement);
+        titleElement.textContent = "Aktuella asteroider nära jorden";
+        asteroidSection.appendChild(titleElement);
 
-        // 2. Kontrollera om det finns några asteroider registrerade för idag
-        if (asteroidsToday && asteroidsToday.length > 0) {
+        // Skapa en punktlista (ul) där vi samlar alla asteroider från alla dagar
+        const ulElement = document.createElement('ul');
+        
+        let totalAsteroids = 0;
+        let totalHazardous = 0;
+
+        // Loopa igenom varje enskilt datum som finns i "near_earth_objects"
+        for (const dateKey in data.near_earth_objects) {
+            const dayList = data.near_earth_objects[dateKey];
             
-            // Räkna hur många som är farliga
-            let hazardousCount = 0;
-            asteroidsToday.forEach(function(asteroid) {
-                if (asteroid.is_potentially_hazardous_asteroid === true) {
-                    hazardousCount++;
-                }
-            });
+            dayList.forEach(asteroid => {
+                totalAsteroids++; // Öka det totala antalet räknade objekt
 
-            // Skapa en text som sammanfattar läget
-            const summaryText = document.createElement('p');
-            summaryText.innerHTML = "I dag passerar <strong>" + asteroidsToday.length + "</strong> kända asteroider i närheten av jorden. Av dessa är <strong>" + hazardousCount + "</strong> markerade som potentiellt farliga av NASA.";
-            apodSection.appendChild(summaryText);
-
-            // Skapa en lista över de tre närmaste eller största asteroiderna
-            const listTitle = document.createElement('h3');
-            listTitle.textContent = "Några av dagens rymdobjekt:";
-            apodSection.appendChild(listTitle);
-
-            const ulElement = document.createElement('ul');
-            
-            // Visa max 3 asteroider så att listan inte blir för lång
-            const maxToShow = Math.min(asteroidsToday.length, 3);
-            for (let i = 0; i < maxToShow; i++) {
-                const asteroid = asteroidsToday[i];
                 const liElement = document.createElement('li');
                 
-                // Hämta max-diametern i meter och runda av den
+                // Hämta storleken i meter och runda av talet snyggt
                 const diameter = Math.round(asteroid.estimated_diameter.meters.estimated_diameter_max);
                 
                 let dangerText = " (Säker)";
                 if (asteroid.is_potentially_hazardous_asteroid === true) {
+                    totalHazardous++;
                     dangerText = " (⚠️ POTENTIELLT FARLIG!)";
                 }
 
-                liElement.textContent = "Asteroid: " + asteroid.name + " | Storlek: ca " + diameter + " meter bred" + dangerText;
+                // Bygg textraden för listan (T.ex: 2026-10-19 | (2009 UY17) - ca 389 meter (⚠️ FARLIG!))
+                liElement.textContent = dateKey + " | " + asteroid.name + " - ca " + diameter + " meter bred" + dangerText;
                 ulElement.appendChild(liElement);
-            }
-            apodSection.appendChild(ulElement);
-
-        } else {
-            const safeText = document.createElement('p');
-            safeText.textContent = "Det verkar helt tomt och lugnt runt jordens omloppsbana i dag!";
-            apodSection.appendChild(safeText);
+            });
         }
 
+        // Skapa en textrad överst som sammanfattar all data
+        const summaryText = document.createElement('p');
+        summaryText.innerHTML = "Under perioden passerar totalt <strong>" + totalAsteroids + "</strong> kända asteroider i närheten av jorden. Av dessa är <strong>" + totalHazardous + "</strong> markerade som potentiellt farliga av NASA.";
+        
+        // Lägg in sammanfattningen och listan i din HTML-sektion
+        asteroidSection.appendChild(summaryText);
+        asteroidSection.appendChild(ulElement);
+
     } catch (error) {
-        console.error("Ett fel uppstod:", error);
-        apodSection.innerHTML = "<h2>Kunde inte hämta asteroiddata just nu.</h2><p>NASA:s server kan vara överbelastad. Försök igen om en stund.</p>";
+        console.error(error);
+        asteroidSection.innerHTML = "<h2>Kunde inte ladda asteroiddata just nu.</h2>";
     }
 }
-    
 
 
 
