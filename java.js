@@ -1,34 +1,67 @@
 // göra en lyssnare för best in space + value med return text 
 
-//hämta elementet med id=best-in-space
+//hämta elementet med id=best-in-space mina rymd funderingar! 
+// Hämta knappen och själva formulärboxen
+const submitBtn = document.getElementById('space-submit-btn');
 const bestInSpace = document.getElementById('best-in-space');
-//lägga på en lyssnare
-bestInSpace.addEventListener('submit', function(event) {
-    //Stoppa formuläret från att ladda om sidan
-    event.preventDefault();
 
-    //hämta värdena från formuläret
-
+// Lägg till en lyssnare som triggas när man klickar på knappen
+submitBtn.addEventListener('click', function() {
+    
+    // Hämta värdena från textrutorna
     const topic1 = document.getElementById('topic1').value;
     const topic2 = document.getElementById('topic2').value;
     const topic3 = document.getElementById('topic3').value;
 
+    // Enkel kontroll så att användaren inte har lämnat fälten tomma
+    if (topic1 === "" || topic2 === "" || topic3 === "") {
+        alert("Vänligen fyll i alla tre rymdfrågor innan du skickar!");
+        return; // Avbryt om något fält är tomt
+    }
 
-    //svarsmeddelande till användaren
+    // Skapa svarsmeddelandet
     const returnMessage = '<h2>Tack för dina frågor! 🚀</h2>' +
                          '<p>Våra rymdexperter har tagit emot dina funderingar om:</p>' +
                          '<ul>' +
-                             '<li><strong>' + q1 + '</strong></li>' +
-                             '<li><strong>' + q2 + '</strong></li>' +
-                             '<li><strong>' + q3 + '</strong></li>' +
+                             '<li><strong>' + topic1 + '</strong></li>' +
+                             '<li><strong>' + topic2 + '</strong></li>' +
+                             '<li><strong>' + topic3 + '</strong></li>' +
                          '</ul>' +
-                         '<p>Vi återkommer till dig med spännande svar</p>';
+                         '<p>Vi återkommer till dig med spännande svar!</p>';
 
-                         //ersätta texten med det nya svaret
-                         bestInSpace.innerHTML = returnMessage;
-
+    // Ersätt hela innehållet i formuläret med tackmeddelandet
+    bestInSpace.innerHTML = returnMessage;
 });
 
+//formulär för kontakt-form kommer här; 
+
+const kontactForm = document.getElementById('kontaktformular');
+
+// en lyssnare för kontakt-info
+kontaktForm.addEventListener('submit', function(event) {
+
+      event.preventDefault();
+
+      //hämta värdena från textrutorna
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Enkel kontroll så att användaren inte har lämnat fälten tomma
+      if (name === "" || email === "" || message === "") {
+          alert("Vänligen fyll i alla fyra fält innan du skickar!");
+          return; // Avbryt om något fält är tomt
+      }
+    // Skapa svarsmeddelandet
+    const tackMessage = '<h2>Tack för ditt meddelande! 🚀</h2>' +
+                         '<p>Vi har tagit emot ditt meddelande och återkommer till <strong>' + email + '</strong> så snart vi kan.</p>' +
+                           '<div style="background: rgba(23, 137, 169, 0.1); padding: 10px; border-radius: 4px; margin-top: 10px;">' +
+                               '<p style="margin: 0; font-style: italic;">Ditt skickade meddelande:</p>' +
+                               '<p style="margin: 5px 0 0 0;">' + message + '</p>' +
+                           '</div>';
+    // Ersätt hela innehållet i formuläret med tackmeddelandet
+    contactForm.innerHTML = tackMessage;
+});
 
 
 
