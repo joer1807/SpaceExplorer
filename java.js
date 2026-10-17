@@ -15,24 +15,23 @@ async function fetchApod() {
 
         const data = await response.json();
 
-        Ändra din befintliga h2-text (utan att blanda in $-tecken)
+        
         const titleElement = apodSection.querySelector('h2');
         titleElement.textContent = "Live in Space: " + data.title;
 
-        Skapa bild-elementet (img)
         const imgElement = document.createElement('img');
         imgElement.src = data.url;          
         imgElement.alt = data.title;        
         imgElement.style.maxWidth = '100%'; 
         
-        Lägg in bilden i din sektion
+        //Lägg in bilden i sektion
         apodSection.appendChild(imgElement);
 
-        Skapa text-elementet (p) för förklaringen
+        //Skapa text-elementet (p) för förklaringen
         const textElement = document.createElement('p');
         textElement.textContent = data.explanation; 
         
-        Lägg in texten i din sektion
+        //Lägg in texten i din sektion
         apodSection.appendChild(textElement);
 
     } catch (error) {
