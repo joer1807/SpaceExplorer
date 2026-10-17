@@ -21,10 +21,15 @@ async function fetchApod() {
 
         const data = await response.json();
 
-        const titleElement = apodSection.querySelector('h2');
-        titleElement.textContent = "Live in Space: " + data.title;
+        // 1. Töm hela sektionen så att vi börjar med ett rent blad
+        apodSection.innerHTML = '';
 
-        // Kontrollera om det är en video eller en bild
+        // 2. Skapa och lägg till en helt ny rubrik dynamiskt
+        const titleElement = document.createElement('h2');
+        titleElement.textContent = "Live in Space: " + data.title;
+        apodSection.appendChild(titleElement);
+
+        // 3. Kontrollera om det är en video eller en bild
         if (data.media_type === "video") {
             const videoElement = document.createElement('iframe');
             videoElement.src = data.url;
@@ -42,7 +47,7 @@ async function fetchApod() {
             apodSection.appendChild(imgElement);
         }
 
-        // Skapa text-elementet (p) för förklaringen
+        // 4. Skapa och lägg till text-elementet (p) för förklaringen
         const textElement = document.createElement('p');
         textElement.textContent = data.explanation; 
         apodSection.appendChild(textElement);
