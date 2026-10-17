@@ -4,8 +4,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // functions 
-    fetchApod();
-    fetchAsteroids();
+     if (document.getElementById('apod-section')) {
+        fetchApod();
+        fetchAsteroids();
+    };
 
     // RYMDFORMULÄR (#best-in-space)
     const submitBtn = document.getElementById('space-submit-btn');
