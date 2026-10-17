@@ -63,7 +63,7 @@
             </div>
         </section>
 
-        <!--Huvudbehållaren som lägger sektionen och bilden SIDA VID SIDA -->
+        <!-- Huvudbehållaren som lägger sektionen och bilden SIDA VID SIDA -->
         <div class="contact-page-wrapper">
 
             <!-- Sektionen med den turkosa bakgrunden (VÄNSTER SIDA) -->
@@ -77,7 +77,7 @@
                     <p><strong>E-post:</strong> spaceexplorer@gmail.com</p>
                 </div>
 
-                <!-- Box 2: Formuläret -->
+                <!-- Box 2: Kontaktformuläret -->
                 <form id="kontaktformular">
                     <h2>Kontakta oss</h2>
                     <p>Fyll i formuläret nedan för att kontakta oss.</p>
@@ -94,13 +94,29 @@
                     <input type="submit" value="Skicka">
                 </form>
 
+                <!-- Box 2.5: Rymdformuläret  -->
+                <form id="best-in-space">
+                    <h2>Vad vill du veta mer om rymden?</h2>
+                    <p>Skriv in tre saker eller frågor du är extra nyfiken på så återkommer vi med svar!</p>
+
+                    <label for="topic1">Sak 1 jag vill lära mig mer om:</label>
+                    <input type="text" id="topic1" name="topic1" placeholder="T.ex. Svarta hål" required>
+
+                    <label for="topic2">Sak 2 jag vill lära mig mer om:</label>
+                    <input type="text" id="topic2" name="topic2" placeholder="T.ex. Resa till Mars" required>
+
+                    <label for="topic3">Sak 3 jag vill lära mig mer om:</label>
+                    <input type="text" id="topic3" name="topic3" placeholder="T.ex. Liv på andra planeter" required>
+
+                    <button type="button" id="space-submit-btn">Skicka mina rymdfrågor</button>
+                </form>
+
                 <!-- Box 3: Rolig fakta -->
                 <div class="fun-facts">
                     <h2>Fun-facts</h2>
                     <ul>
                         <li><strong>Tystnad i rymden:</strong> Rymden är helt tyst eftersom det inte finns någon
                             atmosfär eller luft som kan transportera ljudvågor.</li>
-
                         <li><strong>Diamantregn:</strong> På planeterna Neptunus och Uranus är trycket så extremt högt
                             att det bokstavligen regnar diamanter i atmosfären.</li>
                         <li><strong>Enorm vulkan:</strong> Solsystemets största kända vulkan, Olympus Mons, ligger på
@@ -114,14 +130,17 @@
 
             </section> <!-- HÄR stängs sektionen -->
 
-            <!--Bildbehållaren (HÖGER SIDA) -->
+            <!-- Bildbehållaren (HÖGER SIDA) -->
             <aside class="contact-image-box">
                 <img src="images/space.jpg" alt="space" class="contact-image">
+
+                <!-- Extra behållare så att dina NASA API-hämtningar har någonstans att dumpa sin data -->
+                <div id="apod-section" style="margin-top: 20px;"></div>
+                <div id="asteroid-section" style="margin-top: 20px;"></div>
             </aside>
 
         </div> <!-- HÄR stängs hela wrappern sist av allt -->
     </main>
-
     <footer class="footer">
         <div class="footer-content">
             <p>Copyright 2026@ Space Explorer</p>
