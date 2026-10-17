@@ -7,8 +7,8 @@
     <title>Kontakta oss</title>
 
     <link rel="stylesheet" href="./style.css">
-    <!-- Tillagt 'defer' så att JavaScriptet väntar på att HTML-koden laddats klart -->
-    <script src="./java.js" defer></script> 
+
+    <script src="./java.js" defer></script>
 </head>
 
 <body>
@@ -27,13 +27,14 @@
         </nav>
     </header>
 
-    <main> 
+    <main>
         <section>
             <h2>Våra utbildningar</h2>
             <p>Vi har flera olika utbildningar anpassade för målgruppen. Det finns utbildningar för studenter, lärare,
-                barn och ungdomar. Vi har också utbildningar inom olika ämnen, såsom astronomi, astrofysik, astrofysik för
+                barn och ungdomar. Vi har också utbildningar inom olika ämnen, såsom astronomi, astrofysik, astrofysik
+                för
                 barn och astrofysik för lite större barn.</p>
-            
+
             <div class="table-container">
                 <table id="education-table">
                     <thead>
@@ -62,12 +63,12 @@
             </div>
         </section>
 
-        <!-- 1. Huvudbehållaren som lägger sektionen och bilden SIDA VID SIDA -->
+        <!--Huvudbehållaren som lägger sektionen och bilden SIDA VID SIDA -->
         <div class="contact-page-wrapper">
 
-            <!-- 2. Sektionen med den turkosa bakgrunden (VÄNSTER SIDA) -->
+            <!-- Sektionen med den turkosa bakgrunden (VÄNSTER SIDA) -->
             <section class="contact-form">
-                
+
                 <!-- Box 1: Kontaktinfo -->
                 <div class="contact-info">
                     <h2>Hitta oss</h2>
@@ -80,35 +81,40 @@
                 <form id="kontaktformular">
                     <h2>Kontakta oss</h2>
                     <p>Fyll i formuläret nedan för att kontakta oss.</p>
-                   
+
                     <label for="name">Namn:</label>
                     <input type="text" id="name" name="name" required>
-                    
+
                     <label for="email">E-post:</label>
                     <input type="email" id="email" name="email" required>
-                    
+
                     <label for="message">Meddelande:</label>
                     <textarea id="message" name="message" required></textarea>
-                    
+
                     <input type="submit" value="Skicka">
                 </form>
-           
+
                 <!-- Box 3: Rolig fakta -->
                 <div class="fun-facts">
-    <h2>Fun-facts</h2>
-    <ul>
-        <li><strong>Tystnad i rymden:</strong> Rymden är helt tyst eftersom det inte finns någon atmosfär eller luft som kan transportera ljudvågor.</li>
+                    <h2>Fun-facts</h2>
+                    <ul>
+                        <li><strong>Tystnad i rymden:</strong> Rymden är helt tyst eftersom det inte finns någon
+                            atmosfär eller luft som kan transportera ljudvågor.</li>
 
-        <li><strong>Diamantregn:</strong> På planeterna Neptunus och Uranus är trycket så extremt högt att det bokstavligen regnar diamanter i atmosfären.</li>
-        <li><strong>Enorm vulkan:</strong> Solsystemets största kända vulkan, Olympus Mons, ligger på Mars och är tre gånger så hög som Mount Everest.</li>
-        <li><strong>Krympande måne:</strong> Jordens måne krymper långsamt i takt med att dess inre svalnar, vilket orsakar små månbävningar.</li>
-        <li><strong>Footprints för evigt:</strong> Fotspåren som astronauterna lämnade på månen kan finnas kvar i miljontals år eftersom det inte finns någon vind som blåser bort dem.</li>
-    </ul>
-</div>
+                        <li><strong>Diamantregn:</strong> På planeterna Neptunus och Uranus är trycket så extremt högt
+                            att det bokstavligen regnar diamanter i atmosfären.</li>
+                        <li><strong>Enorm vulkan:</strong> Solsystemets största kända vulkan, Olympus Mons, ligger på
+                            Mars och är tre gånger så hög som Mount Everest.</li>
+                        <li><strong>Krympande måne:</strong> Jordens måne krymper långsamt i takt med att dess inre
+                            svalnar, vilket orsakar små månbävningar.</li>
+                        <li><strong>Footprints för evigt:</strong> Fotspåren som astronauterna lämnade på månen kan
+                            finnas kvar i miljontals år eftersom det inte finns någon vind som blåser bort dem.</li>
+                    </ul>
+                </div>
 
-            </section> <!-- HÄR stängs sektionen korrekt -->
+            </section> <!-- HÄR stängs sektionen -->
 
-            <!-- 3. Bildbehållaren (HÖGER SIDA) -->
+            <!--Bildbehållaren (HÖGER SIDA) -->
             <aside class="contact-image-box">
                 <img src="images/space.jpg" alt="space" class="contact-image">
             </aside>
@@ -120,7 +126,7 @@
         <div class="footer-content">
             <p>Copyright 2026@ Space Explorer</p>
         </div>
-       <nav> 
+        <nav>
             <ul>
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="apod.html">APOD</a></li>
@@ -130,4 +136,5 @@
     </footer>
 
 </body>
+
 </html>
