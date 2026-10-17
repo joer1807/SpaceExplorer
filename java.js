@@ -3,22 +3,47 @@
 
 
 // Skapar en funktion som tar in ett datum som parameter
-async function getApod () {
-//kopplar till html
+async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
+    const apiUrl = 'https://nasa.gov';
 
-const apiKey = 'DEMO_KEY';
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Kunde inte hämta data från NASA API');
+        }
 
-console.log(apiKey);
+        const data = await response.json();
 
-//try-catch-block för att hämta APOD-data
-try {
-    const response = await fetch (apiURL);
-    if (!response.ok) {
-        throw new Error('Kunde inte hämta APOD-data');
+        Ändra din befintliga h2-text (utan att blanda in $-tecken)
+        const titleElement = apodSection.querySelector('h2');
+        titleElement.textContent = "Live in Space: " + data.title;
+
+        Skapa bild-elementet (img)
+        const imgElement = document.createElement('img');
+        imgElement.src = data.url;          
+        imgElement.alt = data.title;        
+        imgElement.style.maxWidth = '100%'; 
+        
+        Lägg in bilden i din sektion
+        apodSection.appendChild(imgElement);
+
+        Skapa text-elementet (p) för förklaringen
+        const textElement = document.createElement('p');
+        textElement.textContent = data.explanation; 
+        
+        Lägg in texten i din sektion
+        apodSection.appendChild(textElement);
+
+    } catch (error) {
+        console.error("Ett fel uppstod:", error);
+        apodSection.innerHTML = "<h2>Kunde inte ladda rymdbilden just nu.</h2>";
     }
-
 }
+    
+
+
+
 
     
 
