@@ -3,6 +3,9 @@
 
 
 // Skapar en funktion som tar in ett datum som parameter
+
+document.addEventListener('DOMContentLoaded', fetchApod);
+
 async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
     const apiUrl = 'https://nasa.gov';
