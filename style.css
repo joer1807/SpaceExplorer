@@ -261,6 +261,10 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     gap: 5px;
 }
 
+*/ puff grid section börjar här */
+
+
+
 
 /* RESPONSIVITET (Skärmar från 768px och uppåt) */
 @media (min-width: 768px) {
