@@ -273,7 +273,17 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     box-sizing: border-box;
 }
 
-#puff-1 
+    /* Puffar börjar här mobil first */
+#puff-1, #puff-2, #puff-3 {
+    background-color: rgba(30, 207, 231, 0.5);
+    color: rgb(17, 12, 12);
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0; /*Alla boxar har nu samma marginaler */
+    transition: all 0.3s ease;
+    border: 1px solid #16c79a;
+}
     
 
 
