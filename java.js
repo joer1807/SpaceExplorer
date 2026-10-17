@@ -13,7 +13,7 @@ async function fetchAsteroids() {
     const apodSection = document.getElementById('apod-section');
     
     // API-länk till Asteroids NeoWs med DEMO_KEY
-    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-17&end_date=2026-10-17&api_key=DEMO_KEY';
+    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-17&end_date=2026-10-20&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
     try {
         const response = await fetch(apiUrl);
