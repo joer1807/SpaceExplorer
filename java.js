@@ -13,7 +13,7 @@ async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
     const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
 
-    try {
+    try { 
         const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('Kunde inte hämta data från NASA API');
