@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // 3. HÄMTA DAGENS RYMDBILD FRÅN NASA (APOD)
 async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
-    const apiUrl = 'https://nasa.gov';
+    const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
     if (!apodSection) {
         return;
