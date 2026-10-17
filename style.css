@@ -241,7 +241,7 @@ nav a:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-*/skicka in mina frågor
+/* Submit-knappen */
 #best-in-space input[type="submit"] {
     background-color: #1789a9;
     color: white;
@@ -256,7 +256,7 @@ nav a:hover {
 #best-in-space input[type="submit"]:hover {
     background-color: #126d87;
 }
-*/ boxen till höger bredvid bilden
+/* boxen som innehåller bilden */
 .contact-image-box {
     width: 100%;
     display: flex;
@@ -270,7 +270,7 @@ nav a:hover {
     object-fit: cover;
     border-radius: 10px;
 }
-*/sista med länkar i footeren
+
 .footer {
     background-color: rgba(49, 110, 232, 0.9);
     border: 1px solid rgba(23, 137, 169, 0.5);
