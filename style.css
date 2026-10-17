@@ -264,10 +264,10 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 */ puff grid section börjar här mobil first */
 #puff-grid-section {
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: repeat (3, 1fr);
     gap: 20px;
     width: 100%;
-    max-width: 100%;
+    max-width: 1200px;
     margin: 20px auto; 
     padding: 0 15px;
     box-sizing: border-box;
