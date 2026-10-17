@@ -3,7 +3,7 @@
 
 
 // Skapar en funktion som tar in ett datum som parameter
-asyncfunction getApod () {
+async function getApod () {
 //kopplar till html
     const apodSection = document.getElementById('apod-section');
 
