@@ -1,8 +1,37 @@
-// JavaScript code to display the NASA APOD
-// ska hämta APOD-data från api.nasa.gov
+// göra en lyssnare för best in space + value med return text 
+
+//hämta elementet med id=best-in-space
+const bestInSpace = document.getElementById('best-in-space');
+//lägga på en lyssnare
+bestInSpace.addEventListener('submit', function(event) {
+    //Stoppa formuläret från att ladda om sidan
+    event.preventDefault();
+
+    //hämta värdena från formuläret
+
+    const topic1 = document.getElementById('topic1').value;
+    const topic2 = document.getElementById('topic2').value;
+    const topic3 = document.getElementById('topic3').value;
 
 
-// Skapar en funktion som tar in ett datum som parameter
+    //svarsmeddelande till användaren
+    const returnMessage = '<h2>Tack för dina frågor! 🚀</h2>' +
+                         '<p>Våra rymdexperter har tagit emot dina funderingar om:</p>' +
+                         '<ul>' +
+                             '<li><strong>' + q1 + '</strong></li>' +
+                             '<li><strong>' + q2 + '</strong></li>' +
+                             '<li><strong>' + q3 + '</strong></li>' +
+                         '</ul>' +
+                         '<p>Vi återkommer till dig med spännande svar</p>';
+
+                         //ersätta texten med det nya svaret
+                         bestInSpace.innerHTML = returnMessage;
+
+});
+
+
+
+
 
 // JavaScript code to display the NASA APOD
 // ska hämta APOD-data från api.nasa.gov
