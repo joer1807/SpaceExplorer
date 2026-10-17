@@ -11,6 +11,13 @@ const apiKey = 'DEMO_KEY';
 
 console.log(apiKey);
 
+//try-catch-block för att hämta APOD-data
+try {
+    const response = await fetch (apiURL);
+    if (!response.ok) {
+        throw new Error('Kunde inte hämta APOD-data');
+    }
+
 }
 
     
