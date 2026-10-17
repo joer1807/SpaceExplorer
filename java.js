@@ -11,7 +11,7 @@ const apiKey = 'DEMO_KEY';
 
 console.log(apiKey);
 
-   
+}
 
     
 
