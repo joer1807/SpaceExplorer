@@ -156,8 +156,8 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     transition: all 0.3s ease;
 }
 
-/* FIXAT: Ersatt border-image med en snygg border+skugga så att hörnen förblir runda */
-.contact-info:hover, .fun-facts:hover, #kontaktformular:hover {
+/* Ersatt border-image med en snygg border+skugga så att hörnen förblir runda */
+.contact-info:hover, .fun-facts:hover, #kontaktformular:hover, #best-in-space:hover {
     border-color: rgb(23, 137, 169);
     filter: drop-shadow(0 0 10px rgba(23, 137, 169, 0.6)) 
             drop-shadow(0 0 20px rgba(23, 137, 169, 0.3));
@@ -173,7 +173,8 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     line-height: 1.5;
 }
 
-#kontaktformular {
+/* Båda formulären staplar sina fält prydligt på höjden */
+#kontaktformular, #best-in-space {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -181,7 +182,7 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
     gap: 5px;
 }
 
-/* FIXAT: Formulär-inputs och textareas görs snyggare för bättre UX */
+/* Formulär-inputs och textareas för #kontaktformular */
 #kontaktformular input[type="text"],
 #kontaktformular input[type="email"],
 #kontaktformular textarea {
@@ -203,6 +204,31 @@ nav a:hover {  /* navigeringsmenyns lista element vid hover */
 }
 
 #kontaktformular input[type="submit"]:hover {
+    background-color: #126d87;
+}
+
+/* Formulär-inputs och textareas för #best-in-space */
+#best-in-space input[type="text"],
+#best-in-space input[type="email"],
+#best-in-space textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#best-in-space input[type="submit"] {
+    background-color: #1789a9;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#best-in-space input[type="submit"]:hover {
     background-color: #126d87;
 }
 
