@@ -165,7 +165,8 @@ nav a:hover {
 
 .contact-info,
 .fun-facts,
-#kontaktformular {
+#kontaktformular,
+#best-in-space {
     font-size: 15px;
     background-color: rgba(240, 245, 255, 0.9);
     border: 1px solid rgba(23, 137, 169, 0.5);
@@ -241,8 +242,9 @@ nav a:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-/* Submit-knappen */
-#best-in-space input[type="submit"] {
+
+/* Submit-knappen för rymdformuläret */
+#space-submit-btn {
     background-color: #1789a9;
     color: white;
     border: none;
@@ -251,11 +253,20 @@ nav a:hover {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.2s;
+    width: 100%;
 }
 
-#best-in-space input[type="submit"]:hover {
+#space-submit-btn:hover {
     background-color: #126d87;
 }
+
+/* Gör textrutorna röda när JavaScript hittar ett fel */
+.form-group input.input-error, 
+.form-group textarea.input-error {
+    border: 2px solid #ff4d4d !important;
+    background-color: #fff8f8;
+}
+
 /* boxen som innehåller bilden */
 .contact-image-box {
     width: 100%;
@@ -293,12 +304,11 @@ nav a:hover {
     border: 2px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
     display: grid;
-    grid-template-columns: repeat (3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Lagat: Tog bort mellanslaget vid repeat */
     gap: 20px;
     width: 100%;
     max-width: 1200px;
     margin: 20px auto 20px 0;
-    ;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -330,73 +340,6 @@ nav a:hover {
     display: none;
 }
 
-@media (max-width: 768px) {
-    .header-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-/* toggle meny mobil */
-    #menu-toggle {
-        display: inline-block;
-        background: none;
-        border: 2px solid white;
-        font-size: 1.5rem;
-        padding: 5px 12px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-
-#main-nav {   /*nav meny mobil*/
-        display: none !important;
-        width: 100%;
-    }
-
-#main-nav.is-open {
-    display: block !important;
-}
-#main-nav ul {
-    flex-direction: column;
-    padding: 0;
-    margin: 20px 0;
-    display: flex;
-}
-#main-nav-li {
-    margin: 10px 0;
-    text-align: center;
-}
-}
-
-/* asteroid-section */
-#asteroid-section {
-    margin: 20px 0;
-    padding: 15px;
-    backgound-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-/* asteroid-section h2 */
-#asteroid-section h2 {
-    color; #1789a9;
-    margin: 0;
-}
-
-#asteorid-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#asteroid-section ul li {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border: 2px solid #1789a9;
-}
-    
-/* RESPONSIVITET (Skärmar från 768px och uppåt) */
 @media (min-width: 768px) {
     .Hero-section {
         height: 250px;
@@ -435,8 +378,8 @@ nav a:hover {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* GÖR ATT FORMULÄRET TAR UPP HELA HÖGERKOLUMNEN I DEN TURKOSA BOXEN */
-    #kontaktformular {
+    /* Gör att formuläret tar upp hela högerkolumnen i den turkosa boxen */
+    #kontaktformular, #best-in-space {
         grid-row: span 2;
     }
 
@@ -454,13 +397,11 @@ nav a:hover {
     }
 
     #puff-grid-section {
-        /* Slår om till 3 kolumner när skärmen är tillräckligt bred */
         grid-template-columns: repeat(3, 1fr);
         margin: 40px auto;
     }
 
     #puff-grid-section h2 {
-        /* Tvingar rubriken att spänna över alla 3 kolumner på datorn */
         grid-column: 1 / -1;
     }
 }
