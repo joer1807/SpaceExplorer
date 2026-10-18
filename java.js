@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (topic2Field.value.trim() === "") {
-                showError(topic2Field, "Vänligen fyll i rymdfråga 2.");
+                showError(topic2Field, "Passa på att ställa en rymdfråga till!.");
                 isFormValid = false;
             } else {
                 clearError(topic2Field);
             }
 
             if (topic3Field.value.trim() === "") {
-                showError(topic3Field, "Vänligen fyll i rymdfråga 3.");
+                showError(topic3Field, "sista chansen till nyfikenhet!.");
                 isFormValid = false;
             } else {
                 clearError(topic3Field);
