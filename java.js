@@ -181,6 +181,18 @@ async function fetchAsteroids() {
     }
 }
 
+
+
+function showError(inputElement, messageText) {
+        inputElement.classList.add('input-error');
+        const errorSpan = inputElement.parentElement.querySelector('.error-text');
+        if (errorSpan) { errorSpan.textContent = messageText; }
+    }
+    function clearError(inputElement) {
+        inputElement.classList.remove('input-error');
+        const errorSpan = inputElement.parentElement.querySelector('.error-text');
+        if (errorSpan) { errorSpan.textContent = ''; }
+    }
 // Toggle meny mobilkommer här 
 
 const menuToggle = document.getElementById('menu-toggle');
@@ -197,7 +209,6 @@ if (menuToggle && mainNav) {
         }
     });
 }
-
 
 
 
