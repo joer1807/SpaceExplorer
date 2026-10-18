@@ -368,7 +368,13 @@ nav a:hover {
 }
 }
 
-
+.asteroid-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 /* RESPONSIVITET (Skärmar från 768px och uppåt) */
 @media (min-width: 768px) {
     .Hero-section {
