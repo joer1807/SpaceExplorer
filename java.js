@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('space-submit-btn');
     const bestInSpace = document.getElementById('best-in-space');
 
-    // Kolla så att rymdformuläret 
+    // Kolla så att rymdformuläret klickas 
     if (submitBtn && bestInSpace) {
         submitBtn.addEventListener('click', function() {
             // Hämta vad användaren skrev i rutorna
@@ -21,10 +21,26 @@ document.addEventListener('DOMContentLoaded', function() {
             const topic2 = document.getElementById('topic2').value;
             const topic3 = document.getElementById('topic3').value;
 
-            // Kontrollera att inga rutor är tomma
-            if (topic1 === "" || topic2 === "" || topic3 === "") {
-                alert("Vänligen fyll i alla tre rymdfrågor innan du skickar!");
-                return;
+            let isFormValid = true;
+
+            // Kontrollera varje ruta med valid. 
+           if (topic1Field.value.trim() === "") {
+                showError(topic1Field, "Vänligen fyll i rymdfråga 1.");
+                isFormValid = false;
+            } else {
+                clearError(topic1Field);
+            }
+            if (topic2Field.value.trim() === "") {
+                showError(topic2Field, "Vänligen fyll i rymdfråga 2.");
+                isFormValid = false;
+            } else {
+                clearError(topic2Field);
+            }
+            if (topic3Field.value.trim() === "") {
+                showError(topic3Field, "Vänligen fyll i rymdfråga 3.");
+                isFormValid = false;
+            } else {
+                clearError(topic3Field);
             }
 
             // Skapa tacktexten genom att plussa ihop strängar
