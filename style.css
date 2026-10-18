@@ -325,6 +325,11 @@ nav a:hover {
     border: 1px solid #16c79a;
 }
 
+/* toggle meny mobil */
+#menu-toggle {
+    display: none;
+}
+
 
 
 /* RESPONSIVITET (Skärmar från 768px och uppåt) */
