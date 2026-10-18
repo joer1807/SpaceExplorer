@@ -368,13 +368,20 @@ nav a:hover {
 }
 }
 
-.asteroid-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+/* asteroid-section */
+#asteroid-section {
+    margin: 20px 0;
+    padding: 15px;
+    backgound-color: #f9f9f9;
+    border-radius: 8px;
 }
+
+/* asteroid-section h2 */
+#asteroid-section h2 {
+    color; #1789a9;
+    margin: 0;
+}
+    
 /* RESPONSIVITET (Skärmar från 768px och uppåt) */
 @media (min-width: 768px) {
     .Hero-section {
