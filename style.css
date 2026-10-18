@@ -212,6 +212,8 @@ nav a:hover {
 #kontaktformular input[type="text"],
 #kontaktformular input[type="email"],
 #kontaktformular textarea {
+    width: 100%;
+    box-sizing: border-box;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -237,6 +239,8 @@ nav a:hover {
 #best-in-space input[type="text"],
 #best-in-space input[type="email"],
 #best-in-space textarea {
+    width: 100%;
+    box-sizing: border-box;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
