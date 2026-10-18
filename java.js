@@ -181,6 +181,26 @@ async function fetchAsteroids() {
     }
 }
 
+// Toggle meny mobilkommer här 
+
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function() {
+        const isOpen = mainNav.classList.toggle('is-open');
+        
+        if (isOpen) {
+            menuToggle.textContent = '✕';
+        } else {
+            menuToggle.textContent = '☰';
+        }
+    });
+}
+
+
+
+
 
 
     

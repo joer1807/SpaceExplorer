@@ -337,7 +337,7 @@ nav a:hover {
         align-items: center;
         width: 100%;
     }
-
+/* toggle meny mobil */
     #menu-toggle {
         display: inline-block;
         background: none;
@@ -348,6 +348,25 @@ nav a:hover {
         border-radius: 5px;
     }
 
+#main-nav {   /*nav meny mobil*/
+        display: none !important;
+        width: 100%;
+    }
+
+#main-nav.is-open {
+    display: block !important;
+}
+#main-nav ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+}
+#main-nav-li {
+    margin: 10px 0;
+    text-align: center;
+}
+}
 
 
 /* RESPONSIVITET (Skärmar från 768px och uppåt) */
