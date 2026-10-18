@@ -1,4 +1,4 @@
-
+"use strict";
 
 // Vänta tills hela HTML-sidan har laddats klart
 document.addEventListener('DOMContentLoaded', function() {
