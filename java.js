@@ -43,6 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearError(topic3Field);
             }
 
+            if (!isFormValid) {
+                return;
+            }
+            const topic1 = topic1Field.value;
+            const topic2 = topic2Field.value;
+            const topic3 = topic3Field.value;
+
             // Skapa tacktexten genom att plussa ihop strängar
             const returnMessage = '<h2>Tack för dina frågor! 🚀</h2>' +
                                  '<p>Våra rymdexperter har tagit emot dina funderingar om:</p>' +
