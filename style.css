@@ -165,6 +165,7 @@ nav a:hover {
 #kontaktformular,
 #best-in-space {
     font-size: 15px;
+    height: 100%;
     background-color: rgba(240, 245, 255, 0.9);
     border: 1px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 0 15px rgba(23, 137, 169, 0.2);
@@ -202,7 +203,9 @@ nav a:hover {
     justify-content: flex-start;
     align-items: stretch;
     gap: 5px;
+    height: 100%;
 }
+
 
 /* Formulär-inputs och textareas för #kontaktformular */
 #kontaktformular input[type="text"],
@@ -413,22 +416,58 @@ nav a:hover {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* BAS-STYLING FÖR KONTAKTSIDAN (Mobil först) gör en wrapper för hela sectionen. */
     .contact-page-wrapper {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: stretch;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
 
     .contact-form {
-        grid-template-columns: repeat(2, 1fr);
-        width: 65%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 75%;
+        gap: 15px;
+        box-sizing: border-box;
     }
 
+    /* border+skugga så att hörnen blir runda */
+    .contact-info,
+    .fun-facts,
+    #kontaktformular,
+    #best-in-space {
+        grid-column: span 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        box-sizing: border-box;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    /* Formulär-inputs och textareas för #kontaktformular */
+    #kontaktformular textarea,
+    #best-in-space input[type="text"] {
+        flex-grow: 1;
+    }
+
+    /* boxen som innehåller bilden */
     .contact-image-box {
-        width: 35%;
+        width: 25%;
+        box-sizing: border-box;
     }
 
     .contact-image-box img {
+        width: 100%;
         height: 100%;
-        min-height: 500px;
+        object-fit: cover;
+        border-radius: 10px;
     }
 }
