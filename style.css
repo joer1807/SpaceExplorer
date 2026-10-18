@@ -83,12 +83,10 @@ nav a:hover {
 }
 
 @keyframes glitterAnimation {
-
     /* animering av glittret text */
     0% {
         background-position: 0% 50%;
     }
-
     100% {
         background-position: 200% center;
     }
@@ -146,8 +144,7 @@ nav a:hover {
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    max-width: 100%;
-    margin: 40px auto;
+    margin: 40px 0;
     padding: 0 15px;
     box-sizing: border-box;
 }
@@ -175,7 +172,6 @@ nav a:hover {
     border-radius: 8px;
     box-sizing: border-box;
     margin: 0;
-    /* Alla boxar har nu samma marginaler */
     transition: all 0.3s ease;
 }
 
@@ -198,7 +194,7 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* Båda formulären staplar sina fält  på höjden */
+/* Båda formulären staplar sina fält på höjden */
 #kontaktformular,
 #best-in-space {
     display: flex;
@@ -286,45 +282,67 @@ nav a:hover {
     border-radius: 10px;
 }
 
-.footer {
-    background-color: rgba(49, 110, 232, 0.9);
-    border: 1px solid rgba(23, 137, 169, 0.5);
-    box-shadow: 0 0 15px rgba(23, 137, 169, 0.2);
-    padding: 20px;
+/* ASTEROID SEKTION */
+#asteroid-section {
+    background-color: rgba(240, 245, 255, 0.9);
+    border: 2px solid rgba(23, 137, 169, 0.5);
+    box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
     border-radius: 8px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
     box-sizing: border-box;
-    margin: 0;
-    /*Alla boxar har nu samma marginaler */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
 }
 
-/*puff grid section börjar här mobil first */
+#asteroid-section h2 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    color: rgb(17, 12, 12);
+}
+
+.asteroid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.asteroid-card {
+    background-color: rgba(30, 207, 231, 0.15);
+    border: 1px solid #16c79a;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    color: rgb(17, 12, 12);
+}
+
+.asteroid-card:hover {
+    border-color: rgb(23, 137, 169);
+    filter: drop-shadow(0 0 10px rgba(23, 137, 169, 0.6)) drop-shadow(0 0 20px rgba(23, 137, 169, 0.3));
+    transform: translateY(-2px);
+    background-color: rgba(30, 207, 231, 0.25);
+}
+
+/* PUFF GRID SECTION */
 #puff-grid-section {
     background-color: rgba(240, 245, 255, 0.9);
     border: 2px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Lagat: Tog bort mellanslaget vid repeat */
+    grid-template-columns: 1fr;
     gap: 20px;
     width: 100%;
-    max-width: 1200px;
-    margin: 20px auto 20px 0;
+    margin: 20px 0;
     padding: 20px;
     box-sizing: border-box;
 }
 
-/* headline */
 #puff-grid-section h2 {
     grid-column: 1 / -1;
     font-size: 24px;
     margin: 0 0 10px 0;
 }
 
-/* Puffar börjar här mobil first */
 #puff-1,
 #puff-2,
 #puff-3 {
@@ -334,16 +352,32 @@ nav a:hover {
     border-radius: 8px;
     box-sizing: border-box;
     margin: 0;
-    /*Alla boxar har nu samma marginaler */
     transition: all 0.3s ease;
     border: 1px solid #16c79a;
 }
 
-/* toggle meny mobil */
+/* FOOTER & DESIGN */
+.footer {
+    background-color: rgba(49, 110, 232, 0.9);
+    border: 1px solid rgba(23, 137, 169, 0.5);
+    box-shadow: 0 0 15px rgba(23, 137, 169, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
 #menu-toggle {
     display: none;
 }
 
+/* RESPONSIVITET */
 @media (min-width: 768px) {
     .Hero-section {
         height: 250px;
@@ -371,41 +405,30 @@ nav a:hover {
         margin: 0 20px;
     }
 
-    .contact-page-wrapper {
-        flex-direction: row !important;
-        justify-content: center;
-        align-items: stretch;
-    }
-
-    .contact-form {
-        flex: 1;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    /* Gör att formuläret tar upp hela högerkolumnen i den turkosa boxen */
-    #kontaktformular, #best-in-space {
-        grid-row: span 2;
-    }
-
-    .contact-image-box {
-        flex: 1;
-        display: flex;
-        align-items: stretch;
-    }
-
-    .contact-image-box img {
-        height: 100%;
-        min-height: 0;
-        max-height: none;
-        object-fit: cover;
+    .asteroid-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     #puff-grid-section {
         grid-template-columns: repeat(3, 1fr);
-        margin: 40px auto;
     }
 
-    #puff-grid-section h2 {
-        grid-column: 1 / -1;
+    .contact-page-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .contact-form {
+        grid-template-columns: repeat(2, 1fr);
+        width: 65%;
+    }
+
+    .contact-image-box {
+        width: 35%;
+    }
+
+    .contact-image-box img {
+        height: 100%;
+        min-height: 500px;
     }
 }
