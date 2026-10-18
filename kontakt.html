@@ -7,18 +7,26 @@
     <title>Kontakta oss</title>
 
     <link rel="stylesheet" href="./style.css">
-
     <script src="./java.js" defer></script>
 </head>
 
 <body>
 
     <header class="Hero-section">
-        <h1>Space Explorer- Kontakta oss</h1>
+        <!-- Omslutande div för att rubrik och knapp ska hamna rätt -->
+        <div class="header-top">
+            <h1>Space Explorer- Kontakta oss</h1>
+            
+            <!-- MOBILMENYKNAPP (Samma som på index-sidan) -->
+            <button id="menu-toggle">☰</button>
+        </div>
+        
         <p>Din resa ut i Universum börjar i dag med ett enkelt klick. Har du frågor om utbildningar, ansökan eller olika
             rymdprojekt? Kontakta oss och få hjälp! Vi är här för att hjälpa dig att lära dig mer om rymden och
             astronomi.</p>
-        <nav>
+        
+        <!-- ID tillagt på nav så att din toggle-meny i JavaScript hittar den -->
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="apod.html">APOD</a></li>
@@ -30,7 +38,7 @@
     <main>
         <section>
             <h2>Våra utbildningar</h2>
-            <p>Vi har flera olika utbildningar anpassade för målgruppen. Det finns utbildningar för studenter, lärare,
+            <p>Vi amser att flera olika utbildningar anpassade för målgruppen. Det finns utbildningar för studenter, lärare,
                 barn och ungdomar. Vi har också utbildningar inom olika ämnen, såsom astronomi, astrofysik, astrofysik
                 för
                 barn och astrofysik för lite större barn.</p>
@@ -77,23 +85,32 @@
                     <p><strong>E-post:</strong> spaceexplorer@gmail.com</p>
                 </div>
 
-                <!-- Box 2: Kontaktformuläret -->
-                <form id="kontaktformular">
+                <!-- Box 2: Kontaktformuläret (novalidate tillagt) -->
+                <form id="kontaktformular" novalidate>
                     <h2>Kontakta oss</h2>
                     <p>Fyll i formuläret nedan för att kontakta oss.</p>
 
-                    <label for="name">Namn:</label>
-                    <input type="text" id="name" name="name" required>
+                    <!-- Fälten har lagts i form-group och required har tagits bort till förmån för span-taggarna -->
+                    <div class="form-group">
+                        <label for="name">Namn:</label>
+                        <input type="text" id="name" name="name">
+                        <span class="error-text" style="color: red; font-size: 0.85rem; display: block; min-height: 18px;"></span>
+                    </div>
 
-                    <label for="email">E-post:</label>
-                    <input type="email" id="email" name="email" required>
+                    <div class="form-group">
+                        <label for="email">E-post:</label>
+                        <input type="email" id="email" name="email">
+                        <span class="error-text" style="color: red; font-size: 0.85rem; display: block; min-height: 18px;"></span>
+                    </div>
 
-                    <label for="message">Meddelande:</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <div class="form-group">
+                        <label for="message">Meddelande:</label>
+                        <textarea id="message" name="message"></textarea>
+                        <span class="error-text" style="color: red; font-size: 0.85rem; display: block; min-height: 18px;"></span>
+                    </div>
 
                     <input type="submit" value="Skicka">
                 </form>
-
 
                 <!-- Box 3: Rolig fakta -->
                 <div class="fun-facts">
@@ -117,11 +134,11 @@
             <!-- Bildbehållaren (HÖGER SIDA) -->
             <aside class="contact-image-box">
                 <img src="images/space.jpg" alt="space" class="contact-image">
-
             </aside>
 
         </div> <!-- HÄR stängs hela wrappern sist av allt -->
     </main>
+    
     <footer class="footer">
         <div class="footer-content">
             <p>Copyright 2026@ Space Explorer</p>
