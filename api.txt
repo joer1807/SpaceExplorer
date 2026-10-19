@@ -2,7 +2,7 @@
 
 https://api.nasa.gov/planetary/apod
 
-api anrop url  https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2023-10-01
+api anrop url  https://api.nasa.gov/planetary/apod?api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC
 
 tänk på att ändra datumet! 
 https://nasa.gov

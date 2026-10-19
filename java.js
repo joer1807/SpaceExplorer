@@ -210,10 +210,10 @@ async function fetchApod() {
 
 // HÄMTA ASTEROIDER FRÅN NASA (NeoWs)
 async function fetchAsteroids() {
-    const asteroidSection = document.getElementById('asteroid-section');
-    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-17&end_date=2026-10-20&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
+    const asteroidList = document.getElementById('asteroid-list');
+    const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
-    if (!asteroidSection) {
+    if (!asteroidList) {
         return;
     }
 
@@ -221,48 +221,32 @@ async function fetchAsteroids() {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        asteroidSection.innerHTML = '';
+        asteroidList.innerHTML = '';
 
-        const titleElement = document.createElement('h2');
-        titleElement.textContent = "Aktuella asteroider nära jorden";
-        asteroidSection.appendChild(titleElement);
+        const listContainer = document.createElement('div');
+        listContainer.className = 'asteroid-cards-group';
 
-        const ulElement = document.createElement('ul');
+        for (const date in data.near_earth_objects) {
+            const asteroids = data.near_earth_objects[date];
+            
+            asteroids.forEach(asteroid => {
+                const card = document.createElement('div');
+                card.className = 'asteroid-card';
 
-        let totalAsteroids = 0;
-        let totalHazardous = 0;
+                card.innerHTML = 
+                    '<h3>' + asteroid.name + '</h3>' +
+                    '<p><strong>Datum:</strong> ' + date + '</p>' +
+                    '<p><strong>Max diameter:</strong> ' + Math.round(asteroid.estimated_diameter.meters.estimated_diameter_max) + ' meter</p>' +
+                    '<p><strong>Missar jorden med:</strong> ' + Math.round(asteroid.close_approach_data.miss_distance.kilometers) + ' km</p>';
 
-        for (const dateKey in data.near_earth_objects) {
-            const dayList = data.near_earth_objects[dateKey];
-
-            for (let i = 0; i < dayList.length; i++) {
-                const asteroid = dayList[i];
-                totalAsteroids = totalAsteroids + 1;
-
-                let liElement = document.createElement('li');
-
-                const diameter = Math.round(asteroid.estimated_diameter.meters.estimated_diameter_max);
-
-                let dangerText = " (Säker)";
-                if (asteroid.is_potentially_hazardous_asteroid === true) {
-                    totalHazardous = totalHazardous + 1;
-                    dangerText = " (⚠️ POTENTIELLT FARLIG!)";
-                }
-
-                liElement.textContent = dateKey + " | " + asteroid.name + " - ca " + diameter + " meter bred" + dangerText;
-                ulElement.appendChild(liElement);
-            }
+                listContainer.appendChild(card);
+            });
         }
 
-        // Lagat och slutfört slutet på asteroid-funktionen:
-        const summaryText = document.createElement('p');
-        summaryText.innerHTML = "Under perioden passerar totalt <strong>" + totalAsteroids + "</strong> kända asteroider i närheten av jorden. Av dessa är <strong>" + totalHazardous + "</strong> markerade som potentiellt farliga av NASA.";
-        
-        asteroidSection.appendChild(summaryText);
-        asteroidSection.appendChild(ulElement);
+        asteroidList.appendChild(listContainer);
 
     } catch (error) {
-        console.error(error);
-        asteroidSection.innerHTML = "<h2>Kunde inte ladda asteroiddata just nu.</h2>";
+        console.error("Fel vid hämtning av asteroider:", error);
+        asteroidList.innerHTML = "<p>Kunde inte ladda asteroiddata just nu.</p>";
     }
 }
