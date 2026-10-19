@@ -1,6 +1,6 @@
 .Hero-section {
     /* översta hero-sektionen */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/space.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images-design/space.jpg') no-repeat center center/cover;
     min-height: 180px;
     height: auto;
     display: flex;
