@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', function() {
-            const isOpen = mainNav.classList.toggle('is-open');
+            const isOpen = mainNav.classList.toggle('open');
             
             if (isOpen) {
                 menuToggle.textContent = '✕';
