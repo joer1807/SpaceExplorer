@@ -294,7 +294,7 @@ nav a:hover {
     border: 4px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
     border-radius: 10px;
-    width: 50%;
+    width: 60%;
     margin: 20px 0;
     padding: 20px;
     box-sizing: border-box;
@@ -317,7 +317,7 @@ nav a:hover {
 
 .asteroid-container {
     display: grid;
-    grid-template-columns: 200px, 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
