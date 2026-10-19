@@ -291,7 +291,7 @@ nav a:hover {
 /* ASTEROID SEKTION */
 #asteroid-section {
     background-color: rgba(123, 163, 243, 0.9);
-    border: 2px solid rgba(23, 137, 169, 0.5);
+    border: 4px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
     border-radius: 10px;
     width: 50%;
@@ -353,14 +353,15 @@ nav a:hover {
 #puff-1,
 #puff-2,
 #puff-3 {
-    background-color: rgba(30, 207, 231, 0.5);
+    background-color: rgba(115, 219, 233, 0.5);
     color: rgb(17, 12, 12);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-sizing: border-box;
     margin: 0;
     transition: all 0.3s ease;
     border: 1px solid #16c79a;
+    height: 100%;
 }
 
 /* FOOTER & DESIGN */
