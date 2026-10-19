@@ -307,6 +307,13 @@ nav a:hover {
     color: rgb(17, 12, 12);
 }
 
+.asteorid-picture {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 
 
 .asteroid-container {
