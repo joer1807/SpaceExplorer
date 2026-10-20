@@ -238,7 +238,7 @@ async function fetchAsteroids() {
                     '<h3>' + asteroid.name + '</h3>' +
                     '<p><strong>Datum:</strong> ' + date + '</p>' +
                     '<p><strong>Max diameter:</strong> ' + Math.round(asteroid.estimated_diameter.meters.estimated_diameter_max) + ' meter</p>' +
-                    '<p><strong>Missar jorden med:</strong> ' + Math.round(asteroid.close_approach_data.miss_distance.kilometers) + ' km</p>';
+                    '<p><strong>Missar jorden med:</strong> ' + Math.round(asteroid.close_approach_data[0].miss_distance.kilometers).toLocaleString('sv-SE') + ' km</p>';
 
                 listContainer.appendChild(card);
             });
