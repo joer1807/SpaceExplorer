@@ -211,7 +211,8 @@ async function fetchApod() {
 // HÄMTA ASTEROIDER FRÅN NASA (NeoWs)
 async function fetchAsteroids() {
     const asteroidList = document.getElementById('asteroid-list');
-    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-18&2026-10-21=END_DATE&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
+    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-17&end_date=2026-10-21&api_key=DEMO_KEY';
+=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
     if (!asteroidList) {
         return;
