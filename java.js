@@ -224,6 +224,8 @@ async function fetchAsteroids() {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
+        console.log(data)
+
         asteroidList.innerHTML = '';
 
         const listContainer = document.createElement('div');
