@@ -314,10 +314,10 @@ nav a:hover {
 }
 /* ASTEROID SEKTION i apod.html. denna är till för att göra att asteroiden blir röd när de är särskilt riskande */
 
-.asteroid-card-danger {
+.asteorid-card-danger {
     background-color: #fff9e6;
-    border: 2px solid #ff4d4d;
-    box-shadow: 0 0 10px rgba(23, 137, 169, 0.6);
+    border: 2px solid #ff4d4d; 
+    box-shadow: 0 0 10px rgba(23, 137, 169, 0.6); 
 }
 /* ASTEROID SEKTION i apod.html */
 .asteroid-picture {
@@ -340,7 +340,7 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-
+/* ASTEROID SEKTION i apod.html */
 .asteroid-card {
     background-color: rgba(30, 207, 231, 0.15);
     border: 1px solid #16c79a;
