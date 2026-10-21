@@ -238,6 +238,10 @@ async function fetchAsteroids() {
                 const card = document.createElement('div');
                 card.className = 'asteroid-card';
 
+                if (asteroid.is_potentially_hazardous_asteroid) {
+                    card.classList.add('asteroid-card-danger');
+                }
+
                 card.innerHTML = 
                     '<h3>' + asteroid.name + '</h3>' +
                     '<p><strong>Datum:</strong> ' + date + '</p>' +
