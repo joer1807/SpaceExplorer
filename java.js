@@ -211,6 +211,8 @@ async function fetchApod() {
 // HÄMTA ASTEROIDER FRÅN NASA (NeoWs)
 async function fetchAsteroids() {
     const asteroidList = document.getElementById('asteroid-list');
+    const today = new Date().toISOString().split('T')[0];  //dagens datum behövs för api
+
     const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-17&end_date=2026-10-19&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
 
