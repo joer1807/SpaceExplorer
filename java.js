@@ -246,7 +246,7 @@ async function fetchAsteroids() {
             });
         }
 
-        asteroidList.appendChild(listContainer);
+        asteroidList.appendChild(listContainer); 
 
     } catch (error) {
         console.error("Fel vid hämtning av asteroider:", error);
