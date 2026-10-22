@@ -143,15 +143,7 @@ nav a:hover {
 }
 
 /* BAS-STYLING FÖR KONTAKTSIDAN.html (Mobil först) gör en wrapper för hela sectionen. */ 
-.contact-page-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    margin: 40px 0;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
+
 
 .contact-form {
     display: grid;
@@ -351,17 +343,17 @@ nav a:hover {
     transition: all 0.3s ease;
     color: rgb(17, 12, 12);
 }
-
+/* ASTEROID SEKTION i apod.html */
 .asteroid-card h3 {
     margin: 0 0 6px 0;
     font-size: 1.1rem;
 }
-
+/* ASTEROID SEKTION i apod.html */
 .asteroid-card p {
     margin: 4px 0;
     font-size: 0.9rem;
 }
-
+/* ASTEROID SEKTION i apod.html */
 .asteroid-card:hover {
     border-color: rgb(23, 137, 169);
     filter: drop-shadow(0 0 10px rgba(23, 137, 169, 0.6)) drop-shadow(0 0 20px rgba(23, 137, 169, 0.3));
@@ -369,8 +361,8 @@ nav a:hover {
     background-color: rgba(30, 207, 231, 0.25);
 }
 
-/* PUFF GRID SECTION */
-#puff-grid-section {
+/* PUFF GRID SECTION idex.html */
+.contact-page-wrapper, #puff-grid-section {
     background-color: rgba(240, 245, 255, 0.9);
     border: 2px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
