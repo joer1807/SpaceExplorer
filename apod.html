@@ -36,30 +36,32 @@
     </header>
     <main>
 
-        <section id="apod-section">
-            <h2>Live in Space</h2>
-        </section>
+        <!-- Gemensam behållare för att kunna lägga API-sektionerna sida vid sida på stor skärm -->
+        <div class="apod-page-wrapper">
 
-        <section id="asteroid-section"> 
-            <h2>Live asteroiddata</h2> 
-           
-        </section> 
+            <section id="apod-section" class="space-box">
+                <h2>Live in Space</h2>
+            </section>
 
-        <!-- behållare som ska fyllas med java script -->
-        <div class="asteroid-list" id="asteroid-list">
+            <!-- ASTEROID SEKTION i apod.html -->
+            <section id="asteroid-section" class="space-box"> 
+                <h2>Live asteroiddata</h2> 
+               
+                <!-- behållare som ska fyllas med java script (Flyttad hit in i sektionen så allt hänger ihop) -->
+                <div class="asteroid-list" id="asteroid-list">
 
-         </div>
+                </div>
+            </section> 
 
-          <!-- Asteroidbild -->
+        </div> <!-- Slut på apod-page-wrapper -->
 
+        <!-- Asteroidbild -->
         <div class="asteroid-container">
              <img src="images-design/earth.jpg" alt="asteroid" class="asteroid-picture">
          </div>
 
-        
-
         <section id="puff-grid-section">
-            <h2>Hur agerar vi om det är en stor asteorid nära?</h2> <!-- En övergripande rubrik för hela sektionen -->
+            <h2 id="puff-grid-section-title">Hur agerar vi om det är en stor asteorid nära?</h2> <!-- En övergripande rubrik för hela sektionen -->
 
             <article id="puff-1">
                 <h3>Utvärdering av hotet</h3>
@@ -103,8 +105,5 @@
     </footer>
 
 </body>
-
-
-
 
 </html>

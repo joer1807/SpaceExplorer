@@ -162,7 +162,8 @@ document.addEventListener('DOMContentLoaded', function () {
 }); // Slutar och stänger hela DOMContentLoaded-funktionen perfekt!
 
 
-// 3. HÄMTA DAGENS RYMDBILD FRÅN NASA (APOD)
+// HÄMTA DAGENS RYMDBILD FRÅN NASA (APOD) styrs av vad nasa lagt upp
+
 async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
     const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
