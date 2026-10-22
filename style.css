@@ -17,7 +17,7 @@
 header h1 {
     /* herosectionens titel alla sidor*/
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
@@ -25,21 +25,15 @@ header h1 {
 header p {
     /* herosectionens text alla sidor*/
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 nav {
     /* navigeringsmenyn alla sidor */
-    font-size: 20px;
     font-weight: bold;
     font-family: Arial, sans-serif;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
     padding: 15px;
 }
 
@@ -58,22 +52,19 @@ nav ul {
 nav ul li {
     /* navigeringsmenyns lista element */
     margin: 0;
-    color: rgb(18, 18, 18);
 }
 
 nav a {
-    /* navigeringsmenyns lista element */
-    font-size: 20px;
+    /* navigeringsmenyns länkar */
+    font-size: 30px;
     text-decoration: none;
-    color: rgb(244, 245, 243);
     transition: all 0.5s ease;
     display: inline-block;
 
-    background: linear-gradient(90deg, rgb(235, 232, 232), rgb(23, 137, 169), rgb(235, 232, 232));
+     background: linear-gradient(90deg, rgb(235, 232, 232), rgb(23, 137, 169), rgb(235, 232, 232));
     background-size: 200% auto;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: rgb(235, 232, 232);
-    /* Visar den gråvita färgen först */
+    -webkit-text-fill-color: transparent;
 }
 
 nav a:hover {
@@ -89,7 +80,7 @@ nav a:hover {
 
     /* animering av glittret text alla sidor*/
     0% {
-        background-position: 0% 50%;
+        background-position: 0% center;
     }
 
     100% {
@@ -342,7 +333,7 @@ nav a:hover {
 
     /*hero nav på rad på stor skärm*/
 
-    
+
     nav ul {
         flex-direction: row; 
         gap:25px;
