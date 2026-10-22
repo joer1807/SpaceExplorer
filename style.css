@@ -11,7 +11,7 @@
     padding: 20px 15px;
     text-align: center;
     gap: 15px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 header h1 {
@@ -19,7 +19,7 @@ header h1 {
     color: white;
     font-size: 30px;
     margin: 0;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 header p {
@@ -27,7 +27,7 @@ header p {
     color: white;
     font-size: 30px;
     margin: 0;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 nav {
@@ -86,10 +86,12 @@ nav a:hover {
 }
 
 @keyframes glitterAnimation {
+
     /* animering av glittret text alla sidor*/
     0% {
         background-position: 0% 50%;
     }
+
     100% {
         background-position: 200% center;
     }
@@ -142,7 +144,7 @@ nav a:hover {
     color: #ffffff;
 }
 
-/* BAS-STYLING FÖR KONTAKTSIDAN.html (Mobil först) gör en wrapper för hela sectionen. */ 
+/* BAS-STYLING FÖR KONTAKTSIDAN.html (Mobil först) gör en wrapper för hela sectionen. */
 
 .contact-form {
     display: grid;
@@ -154,6 +156,7 @@ nav a:hover {
     width: 100%;
     box-sizing: border-box;
 }
+
 /* innehållet i wrappern */
 .contact-info,
 .fun-facts,
@@ -258,7 +261,7 @@ nav a:hover {
 }
 
 /* Gör textrutorna röda när JavaScript hittar ett fel */
-.form-group input.input-error, 
+.form-group input.input-error,
 .form-group textarea.input-error {
     border: 2px solid #ff4d4d !important;
     background-color: #fff8f8;
@@ -290,12 +293,14 @@ nav a:hover {
     padding: 20px;
     box-sizing: border-box;
 }
+
 /* ASTEROID SEKTION i apod.html */
 #asteroid-section h2 {
     font-size: 24px;
     margin: 0 0 20px 0;
     color: rgb(17, 12, 12);
 }
+
 /* ASTEROID SEKTION i apod.html */
 .asteroid-cards-group {
     display: grid;
@@ -306,13 +311,13 @@ nav a:hover {
 
 
 @media (min-width: 769px) {
-    
+
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
     .fun-facts {
         grid-column: span 1;
     }
 
-     /* Lägger den turkosa sektionen till vänster och den stora jordbilden till höger */
+    /* Lägger den turkosa sektionen till vänster och den stora jordbilden till höger */
     .contact-page-wrapper {
         display: flex;
         flex-direction: row;
@@ -320,8 +325,8 @@ nav a:hover {
         align-items: stretch;
         gap: 25px;
         width: 100%;
-        max-width: 100%; 
-        box-sizing: border-box; 
+        max-width: 100%;
+        box-sizing: border-box;
         margin: 30px 0;
     }
 
@@ -331,7 +336,8 @@ nav a:hover {
         flex-direction: row !important;
         justify-content: space-between;
         align-items: stretch;
-        width: 65% !important; /* Ger den turkosa */
+        width: 65% !important;
+        /* Ger den turkosa */
         gap: 15px;
         box-sizing: border-box;
     }
@@ -339,12 +345,12 @@ nav a:hover {
     .contact-info,
     #best-in-space,
     .fun-facts {
-        flex: 1; 
+        flex: 1;
         width: auto !important;
     }
-    
+
     #best-in-space {
-        flex: 1.3; 
+        flex: 1.3;
     }
 
     /* Den stora jordbilden till höger tar upp 35% av bredden */
