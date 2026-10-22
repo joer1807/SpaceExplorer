@@ -312,6 +312,36 @@ nav a:hover {
     width: 100%;
 }
 
+/* Styling för de nya korten som skapas via JavaScript */
+.asteroid-card {
+    background-color: #1a1a2e; 
+    color: #ffffff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+/* hovrar över ett kort */
+.asteroid-card:hover {
+    transform: translateY(-5px);
+    border-color: #00bcd4;
+}
+
+/* varje litet kort */
+.asteroid-card h3 {
+    margin-top: 0;
+    color: #00bcd4; 
+    font-size: 1.2rem;
+}
+
+.asteroid-card p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+/*ovanför footer*/
 #puff-grid-section {
     display: grid;
     grid-template-columns: 1fr;
