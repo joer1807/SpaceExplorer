@@ -285,6 +285,8 @@ nav a:hover {
 }
 
 /* ASTEROID SEKTION i apod.html */
+
+
 #asteroid-section {
     background-color: rgba(163, 188, 237, 0.9);
     border: 4px solid rgba(23, 137, 169, 0.5);
@@ -340,6 +342,14 @@ nav a:hover {
 .asteroid-card p {
     margin: 8px 0;
     font-size: 0.9rem;
+}
+
+/*img i asteroid-card*/
+.asteroid-picture {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 /*ovanför footer*/
