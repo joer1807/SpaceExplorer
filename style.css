@@ -61,7 +61,7 @@ nav a {
     transition: all 0.5s ease;
     display: inline-block;
 
-     background: linear-gradient(90deg, rgb(235, 232, 232), rgb(23, 137, 169), rgb(235, 232, 232));
+    background: linear-gradient(90deg, rgb(235, 232, 232), rgb(23, 137, 169), rgb(235, 232, 232));
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -101,7 +101,7 @@ nav a:hover {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-collapse: collapse;
     width: 100%;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 #education-table th {
@@ -155,9 +155,9 @@ nav a:hover {
 #kontaktformular,
 #best-in-space {
     font-size: 15px;
-   min-height: 300px;
-   width: 100%;
-   max-width:500px;
+    min-height: 300px;
+    width: 100%;
+    max-width: 500px;
     background-color: rgba(240, 245, 255, 0.9);
     border: 1px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 0 15px rgba(23, 137, 169, 0.2);
@@ -167,7 +167,7 @@ nav a:hover {
     margin: 0;
     transition: all 0.3s ease;
     align-items: start;
- 
+
 }
 
 /* border+skugga så att hörnen blir runda */
@@ -304,9 +304,10 @@ nav a:hover {
     gap: 15px;
     width: 100%;
 }
+
 /*footer styligen*/
 .footer {
-    background-color: rgb(15, 15, 25); 
+    background-color: rgb(15, 15, 25);
     padding: 30px 15px;
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -333,22 +334,23 @@ nav a:hover {
     font-size: 16px;
 }
 
+/*=========obs media börjar här======*/
+
 
 @media (min-width: 769px) {
 
     /*hero nav på rad på stor skärm*/
 
-
     nav ul {
-        flex-direction: row; 
-        gap:25px;
-        
+        flex-direction: row;
+        gap: 25px;
+
     }
-    
-    
+
+
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
     .fun-facts {
-        grid-column: span 1; 
+        grid-column: span 1;
     }
 
     /* Lägger den turkosa sektionen till vänster och den stora jordbilden till höger */
