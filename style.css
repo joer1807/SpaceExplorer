@@ -342,7 +342,7 @@ nav a:hover {
 
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
     .fun-facts {
-        grid-column: span 1;
+        grid-column: span 1; 
     }
 
     /* Lägger den turkosa sektionen till vänster och den stora jordbilden till höger */
