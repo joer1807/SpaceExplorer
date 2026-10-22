@@ -96,6 +96,12 @@ nav a:hover {
     margin: 20px 0;
 }
 
+.intro-section {
+    background-color: white;
+    font-size: 20px;
+
+}
+
 #education-table {
     /* tabell med utbildningar/information unikt id */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -154,7 +160,7 @@ nav a:hover {
 .fun-facts,
 #kontaktformular,
 #best-in-space {
-    font-size: 15px;
+    font-size: 20px;
     min-height: 300px;
     width: 100%;
     max-width: 500px;
