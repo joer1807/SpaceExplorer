@@ -340,6 +340,15 @@ nav a:hover {
 
 @media (min-width: 769px) {
 
+    /*hero nav på rad på stor skärm*/
+
+    nav ul {
+        flex-direction: row; 
+        gap:25px;
+        
+    }
+    
+    
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
     .fun-facts {
         grid-column: span 1; 
