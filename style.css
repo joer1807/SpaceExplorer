@@ -1,5 +1,5 @@
 .Hero-section {
-    /* översta hero-sektionen */
+    /* översta hero-sektionen alla sidor*/
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images-design/space.jpg') no-repeat center center/cover;
     min-height: 180px;
     height: auto;
@@ -15,7 +15,7 @@
 }
 
 header h1 {
-    /* herosectionens titel */
+    /* herosectionens titel alla sidor*/
     color: white;
     font-size: 30px;
     margin: 0;
@@ -23,9 +23,9 @@ header h1 {
 }
 
 header p {
-    /* herosectionens text */
+    /* herosectionens text alla sidor*/
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     margin: 0;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
