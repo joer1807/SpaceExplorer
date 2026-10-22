@@ -391,7 +391,6 @@ nav a:hover {
 
     }
 
-
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
     .fun-facts {
         grid-column: span 1;
@@ -436,5 +435,22 @@ nav a:hover {
     /* Den stora jordbilden till höger tar upp 35% av bredden */
     .contact-image-box {
         width: 35% !important;
+    }
+
+    /* Puff-grid-section */
+    #puff-grid-section {
+        width: 100%;
+        max-width: 900px;
+
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 15px;
+        padding: 20px;
+        
+
+        /* Puff-grid-section-title */
+        #puff-grid-section-title {
+            font-size: 24px;
+           padding:18px;
+        }
     }
 }
