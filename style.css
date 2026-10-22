@@ -313,8 +313,8 @@ nav a:hover {
 
 #puff-grid-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
     width: 100%;
     background-color: rgba(123, 163, 243, 0.9);
     border: 4px solid rgba(23, 137, 169, 0.5);
