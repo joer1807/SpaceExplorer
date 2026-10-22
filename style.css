@@ -31,8 +31,8 @@ header p {
 }
 
 nav {
-    /* navigeringsmenyn */
-    font-size: 16px;
+    /* navigeringsmenyn alla sidor */
+    font-size: 20px;
     font-weight: bold;
     font-family: Arial, sans-serif;
     color: black;
@@ -86,7 +86,7 @@ nav a:hover {
 }
 
 @keyframes glitterAnimation {
-    /* animering av glittret text */
+    /* animering av glittret text alla sidor*/
     0% {
         background-position: 0% 50%;
     }
@@ -95,7 +95,7 @@ nav a:hover {
     }
 }
 
-/* html kontaktsidan börjar här*/
+/* html kontaktsidan/hem.html börjar här*/
 .table-container {
     /* tabell med utbildningar behållare */
     width: 100%;
@@ -104,7 +104,7 @@ nav a:hover {
 }
 
 #education-table {
-    /* tabell med utbildningar unikt id */
+    /* tabell med utbildningar/information unikt id */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-collapse: collapse;
     width: 100%;
@@ -120,17 +120,18 @@ nav a:hover {
 }
 
 #education-table td {
-    /* tabell med utbildningar tabellrubrik unikt id */
+    /* tabell med utbildningar/information tabellrubrik unikt id */
     padding: 10px;
     border: 1px solid #1789a9;
     color: rgb(43, 23, 141);
 }
 
 #education-table tbody tr:nth-child(even) {
-    /* tabell med utbildningar tabellrubrik unikt id */
+    /* tabell med utbildningar/information tabellrubrik unikt id som färgar varannan rad ntn-child jämna raderna ska färgas */
     background-color: #9f96e9;
 }
 
+/* ändrar färgen när man hoovrar på en rad */
 #education-table tbody tr:hover {
     background-color: #3150ea;
     transition: background-color 0.3s ease;
@@ -141,7 +142,7 @@ nav a:hover {
     color: #ffffff;
 }
 
-/* BAS-STYLING FÖR KONTAKTSIDAN (Mobil först) gör en wrapper för hela sectionen. */ 
+/* BAS-STYLING FÖR KONTAKTSIDAN.html (Mobil först) gör en wrapper för hela sectionen. */ 
 .contact-page-wrapper {
     display: flex;
     flex-direction: column;
