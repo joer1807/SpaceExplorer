@@ -305,8 +305,8 @@ nav a:hover {
 
 /* ASTEROID SEKTION i apod.html */
 #asteroid-list {
-    display: grid;!important;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
     gap: 15px;
     padding: 15px;
     width: 100%;
@@ -428,7 +428,6 @@ nav a:hover {
         gap: 25px;
 
     }
-
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
     .fun-facts {
         grid-column: span 1;
@@ -474,6 +473,9 @@ nav a:hover {
     .contact-image-box {
         width: 35% !important;
     }
+
+
+
 
    
 }

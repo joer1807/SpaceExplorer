@@ -212,10 +212,8 @@ async function fetchApod() {
 // HÄMTA ASTEROIDER FRÅN NASA (NeoWs)
 async function fetchAsteroids() {
     const asteroidList = document.getElementById('asteroid-list');
-    const today = new Date().toISOString().split('T')[0];  //dagens datum behövs för api
 
     const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-17&end_date=2026-10-19&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
-
 
     if (!asteroidList) {
         return;
@@ -225,13 +223,12 @@ async function fetchAsteroids() {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        console.log(data)
+        console.log(data);
 
+        // Töm listan först
         asteroidList.innerHTML = '';
 
-        const listContainer = document.createElement('div');
-        listContainer.className = 'asteroid-cards-group';
-
+        // Loopa igenom datumen
         for (const date in data.near_earth_objects) {
             const asteroids = data.near_earth_objects[date];
             
@@ -248,13 +245,12 @@ async function fetchAsteroids() {
                     '<p><strong>Datum:</strong> ' + date + '</p>' +
                     '<p><strong>Max diameter:</strong> ' + Math.round(asteroid.estimated_diameter.meters.estimated_diameter_max) + ' meter</p>' +
                     '<p><strong>Missar jorden med:</strong> ' + Math.round(asteroid.close_approach_data[0].miss_distance.kilometers).toLocaleString('sv-SE') + ' km</p>' +
-                    '<p><strong>´Potentiell RISK vid kollision:</strong> ' + (asteroid.is_potentially_hazardous_asteroid ? "Ja" : "Nej") + '</p>';
-                  
-                listContainer.appendChild(card); 
+                    '<p><strong>Potentiell RISK vid kollision:</strong> ' + (asteroid.is_potentially_hazardous_asteroid ? "⚠️ Ja" : "✅ Nej") + '</p>';
+                
+                // ÄNDRING: Lägg till direkt i asteroidList istället för listContainer
+                asteroidList.appendChild(card); 
             });
         }
-
-        asteroidList.appendChild(listContainer); 
 
     } catch (error) {
         console.error("Fel vid hämtning av asteroider:", error);
