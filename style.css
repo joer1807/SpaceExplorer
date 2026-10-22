@@ -142,38 +142,8 @@ nav a:hover {
     color: #ffffff;
 }
 
-/* ========================================================
-   GEMENSAM STORLEK OCH FORMAT FÖR ATT MATCHA REKTANGLARNA 
-   ======================================================== */
-.contact-page-wrapper, 
-#puff-grid-section {
-    width: 100%;
-    margin: 40px 0;
-    box-sizing: border-box;
-}
-
 /* BAS-STYLING FÖR KONTAKTSIDAN.html (Mobil först) gör en wrapper för hela sectionen. */ 
-.contact-page-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 15px;
-}
 
-/* UNIK MOBILSTYLING STARTSIDANS PUFFAR */
-#puff-grid-section {
-    background-color: rgba(240, 245, 255, 0.9);
-    border: 2px solid rgba(23, 137, 169, 0.5);
-    box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* ========================================================
-   FORMULÄR OCH PROFIL-GRID
-   ======================================================== */
 .contact-form {
     display: grid;
     grid-template-columns: 1fr;
@@ -184,7 +154,7 @@ nav a:hover {
     width: 100%;
     box-sizing: border-box;
 }
-
+/* innehållet i wrappern */
 .contact-info,
 .fun-facts,
 #kontaktformular,
@@ -320,14 +290,12 @@ nav a:hover {
     padding: 20px;
     box-sizing: border-box;
 }
-
 /* ASTEROID SEKTION i apod.html */
 #asteroid-section h2 {
     font-size: 24px;
     margin: 0 0 20px 0;
     color: rgb(17, 12, 12);
 }
-
 /* ASTEROID SEKTION i apod.html */
 .asteroid-cards-group {
     display: grid;
@@ -335,14 +303,13 @@ nav a:hover {
     gap: 15px;
     width: 100%;
 }
-
 /* ASTEROID SEKTION i apod.html. denna är till för att göra att asteroiden blir röd när de är särskilt riskande */
+
 .asteorid-card-danger {
     background-color: #fff9e6;
     border: 2px solid #ff4d4d; 
     box-shadow: 0 0 10px rgba(23, 137, 169, 0.6); 
 }
-
 /* ASTEROID SEKTION i apod.html */
 .asteroid-picture {
     width: 100%; 
@@ -352,7 +319,6 @@ nav a:hover {
     display: block; 
     margin: 20px auto;
 }
-
 /* ASTEROID SEKTION i apod.html */
 .asteroid-container {
     width: 100vw;
@@ -370,12 +336,85 @@ nav a:hover {
     background-color: rgba(30, 207, 231, 0.15);
     border: 1px solid #16c79a;
     border-radius: 8px;
-    padding: 12px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    color: rgb(17, 12, 12);
+}
+/* ASTEROID SEKTION i apod.html */
+.asteroid-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+}
+/* ASTEROID SEKTION i apod.html */
+.asteroid-card p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+/* ASTEROID SEKTION i apod.html */
+.asteroid-card:hover {
+    border-color: rgb(23, 137, 169);
+    filter: drop-shadow(0 0 10px rgba(23, 137, 169, 0.6)) drop-shadow(0 0 20px rgba(23, 137, 169, 0.3));
+    transform: translateY(-2px);
+    background-color: rgba(30, 207, 231, 0.25);
 }
 
-/* ========================================================
-   RESPONSIVITET 
-   ======================================================== */
+/* PUFF GRID SECTION idex.html */
+.contact-page-wrapper, #puff-grid-section {
+    background-color: rgba(240, 245, 255, 0.9);
+    border: 2px solid rgba(23, 137, 169, 0.5);
+    box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#puff-grid-section h2 {
+    grid-column: 1 / -1;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+#puff-1,
+#puff-2,
+#puff-3 {
+    background-color: rgba(115, 219, 233, 0.5);
+    color: rgb(17, 12, 12);
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    transition: all 0.3s ease;
+    border: 1px solid #16c79a;
+    height: 100%;
+}
+
+/* FOOTER & DESIGN */
+.footer {
+    background-color: rgba(49, 110, 232, 0.9);
+    border: 1px solid rgba(23, 137, 169, 0.5);
+    box-shadow: 0 0 15px rgba(23, 137, 169, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* RESPONSIVITET */
 @media (min-width: 768px) {
     .Hero-section {
         height: 250px;
@@ -412,10 +451,63 @@ nav a:hover {
     }
 
     /* BAS-STYLING FÖR KONTAKTSIDAN (Mobil först) gör en wrapper för hela sectionen. */
-    .contact-page-wrapper {
-        flex-direction: row; /* Tips: Ändra till row-reverse om bilden hamnar till vänster istället för höger */
-        align-items: stretch;
-        padding: 0 15px;
+   .contact-page-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: stretch !important;
+        gap: 20px !important;
+    }
+    .contact-form {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        width: 75% !important;
+    }
+    .contact-info,
+    .fun-facts,
+    #kontaktformular,
+    #best-in-space {
+        grid-column: span 1 !important;
+    }
+    .contact-image-box {
+        width: 25% !important;
     }
 
-    .contact-form {
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    /* Formulär-inputs och textareas för #kontaktformular */
+    #kontaktformular textarea,
+    #best-in-space input[type="text"] {
+        flex-grow: 1;
+    }
+
+    /* boxen som innehåller bilden */
+    .contact-image-box {
+        width: 25%;
+        box-sizing: border-box;
+    }
+
+    .contact-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+
+.contact-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin: 40px 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+
