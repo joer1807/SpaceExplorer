@@ -154,7 +154,9 @@ nav a:hover {
 #kontaktformular,
 #best-in-space {
     font-size: 15px;
-    height: 100%;
+   min-height: 300px;
+   width: 100%;
+   max-width:500px;
     background-color: rgba(240, 245, 255, 0.9);
     border: 1px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 0 15px rgba(23, 137, 169, 0.2);
