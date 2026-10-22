@@ -314,8 +314,8 @@ nav a:hover {
 
 /* Styling för de nya korten som skapas via JavaScript */
 .asteroid-card {
-    background-color: #1a1a2e; 
-    color: #ffffff;
+    background-color: #2121de; 
+    color: #0c0c0c;
     border: 1px solid #333;
     border-radius: 8px;
     padding: 20px;
