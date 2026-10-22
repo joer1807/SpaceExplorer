@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isOpen) {
                 menuToggle.textContent = '✕';
             } else {
-                menuToggle.textContent = '☰';
+                menuToggle.textContent = '☰'; 
             }
         });
     }
