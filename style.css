@@ -53,7 +53,7 @@ header p {
     width: 100%;
 }
 
-#main-nav open {
+#main-nav.open {
     display: block;
 }
 
@@ -542,7 +542,6 @@ nav a:hover {
     /*gömmer den på stor skärm*/
     #menu-toggle {
         display: block;
-  
 }
 #main-nav {
     display: block;
