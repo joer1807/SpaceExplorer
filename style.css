@@ -452,24 +452,24 @@ nav a:hover {
 
     /* BAS-STYLING FÖR KONTAKTSIDAN (Mobil först) gör en wrapper för hela sectionen. */
    .contact-page-wrapper {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: stretch !important;
-        gap: 20px !important;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 20px;
     }
     .contact-form {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        width: 75% !important;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 75%;
     }
     .contact-info,
     .fun-facts,
     #kontaktformular,
     #best-in-space {
-        grid-column: span 1 !important;
+        grid-column: span 1;
     }
     .contact-image-box {
-        width: 25% !important;
+        width: 25%;
     }
 
 
