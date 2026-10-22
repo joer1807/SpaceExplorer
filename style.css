@@ -30,6 +30,45 @@ header p {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
+/* ID tillagt på nav så att din toggle-meny i JavaScript hittar den gäller mobilen*/
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+}
+
+#main-nav {
+    display: none;
+    width: 100%;
+}
+
+#main-nav open {
+    display: block;
+}
+
+#main-nav-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    margin: 0;
+    list-style: none;
+    background-color: transparent;
+}
+
 nav {
     /* navigeringsmenyn alla sidor */
     font-size: 20px;
@@ -497,6 +536,25 @@ nav a:hover {
         object-fit: cover;
         border-radius: 10px;
     }
+
+    /*hamburger meny stor skärm*/
+
+    /*gömmer den på stor skärm*/
+    #menu-toggle {
+        display: block;
+  
+}
+#main-nav {
+    display: block;
+    width: auto;
+}
+
+#main-nav-ul {
+    flex-direction: row;
+    background-color: transparent;
+    padding: 0;
+    gap: 20px;
+}
 }
 
 
