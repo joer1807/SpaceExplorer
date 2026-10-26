@@ -174,6 +174,9 @@ async function fetchApod() {
 
     try {
         const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('serverfel hos NASA: "' + response.statusText + '"');
+        }
         const data = await response.json();
 
         apodSection.innerHTML = '';
@@ -192,7 +195,7 @@ async function fetchApod() {
             apodSection.appendChild(videoElement);
         } else {
             const imgElement = document.createElement('img');
-            imgElement.src = data.url || data.hdurl; 
+            imgElement.src = data.url || data.hdurl;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
             imgElement.alt = data.title;
             imgElement.style.maxWidth = '100%';
             imgElement.style.borderRadius = "8px";
