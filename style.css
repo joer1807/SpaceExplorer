@@ -30,7 +30,7 @@ header p {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-nav {
+#main-nav {
     /* navigeringsmenyn alla sidor */
     font-weight: bold;
     font-family: Arial, sans-serif;
@@ -38,7 +38,7 @@ nav {
     display: none;  
 }
 
-nav.active {
+#main-nav.active {
     display: block;
 }
 
