@@ -439,7 +439,7 @@ nav a:hover {
 
     /*hero nav på rad på stor skärm*/
 
-    nav ul {
+    #main-nav ul {
         flex-direction: row;
         gap: 25px;
 

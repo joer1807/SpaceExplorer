@@ -192,7 +192,7 @@ async function fetchApod() {
             apodSection.appendChild(videoElement);
         } else {
             const imgElement = document.createElement('img');
-            imgElement.src = data.url;
+            imgElement.src = data.url || data.hdurl; 
             imgElement.alt = data.title;
             imgElement.style.maxWidth = '100%';
             imgElement.style.borderRadius = "8px";
@@ -213,7 +213,7 @@ async function fetchApod() {
 async function fetchAsteroids() {
     const asteroidList = document.getElementById('asteroid-list');
 
-    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-17&end_date=2026-10-19&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
+    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-24&end_date=2026-10-25&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
     if (!asteroidList) {
         return;
