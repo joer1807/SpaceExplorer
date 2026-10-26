@@ -32,10 +32,12 @@ header h1 {
 
 header p {
     /* herosectionens text alla sidor*/
-    color: white;
-    font-size: 24px;
+    color: #e2e8f0; /* Lite mjukare vit för bättre kontrast */
+    font-size: 20px; /* Något mindre för att skapa snyggare hierarki till H1 */
     margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(147, 51, 234, 0.3);
 }
 
 #main-nav {
