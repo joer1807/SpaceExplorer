@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Toggle meny mobilkommer här 
+    // Toggle meny mobilkommer här för mobilen 
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
 

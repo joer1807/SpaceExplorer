@@ -444,6 +444,17 @@ nav a:hover {
         gap: 25px;
 
     }
+
+    /*stora skärmar menu toogle kommer här*/
+
+    #menu-toggle {
+        display: none;
+    }
+    nav {
+        display:block !important;   
+    }
+
+
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
     .fun-facts {
         grid-column: span 1;
