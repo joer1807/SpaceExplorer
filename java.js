@@ -205,7 +205,7 @@ async function fetchApod() {
             videoElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             apodSection.appendChild(videoElement);
 
-        } else {     //ellerbild dagens bild skickas: 
+        } else {     //eller bild dagens bild skickas: 
             const imgElement = document.createElement('img');
             imgElement.src = data.hdurl || data.url;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
             imgElement.alt = data.title;
