@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
-                //när användaren skrivit in fältet tas felmeddelandet bort. 
+    //när användaren skrivit in fältet tas felmeddelandet bort. 
     function clearError(inputElement) {
         inputElement.classList.remove('input-error');  //det röda försvinner igen. 
         const formGroup = inputElement.closest('.form-group');
@@ -152,13 +152,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const mainNav = document.getElementById('main-nav');
 
     if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             const isOpen = mainNav.classList.toggle('active');
-            
+
             if (isOpen) {
                 menuToggle.textContent = '✕';
             } else {
-                menuToggle.textContent = '☰'; 
+                menuToggle.textContent = '☰';
             }
         });
     }
@@ -175,21 +175,21 @@ async function fetchApod() {
     if (!apodSection) {
         return;
     }
-               //om inte fungerar return från nasa svarstext 
+    //om inte fungerar return från nasa svarstext 
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('serverfel hos NASA: "' + response.statusText + '"');
         }   //skickar tillbaka en json fil 
         const data = await response.json();
-              //ändrar html o visar upp ny text 
+        //ändrar html o visar upp ny text 
         apodSection.innerHTML = '';
 
         const titleElement = document.createElement('h2');
         titleElement.textContent = "Live in Space: " + data.title;
         apodSection.appendChild(titleElement);
 
-                //nasa anv ibland youtubeformat, om skickas ett anpassas: 
+        //nasa anv ibland youtubeformat, om skickas ett anpassas: 
 
         if (data.media_type === "video") {
             const videoElement = document.createElement('iframe');
@@ -212,7 +212,7 @@ async function fetchApod() {
         const textElement = document.createElement('p');
         textElement.textContent = data.explanation;
         apodSection.appendChild(textElement);
-  //felmeddelande om bilden inte hämtas
+        //felmeddelande om bilden inte hämtas
 
     } catch (error) {
         console.error(error);
@@ -225,11 +225,11 @@ async function fetchApod() {
 async function fetchAsteroids() {    //asynkron
     const asteroidList = document.getElementById('asteroid-list');  //hittar platsen i HTMLKODEN
 
-//apinyckeln här med datum
+    //apinyckeln här med datum
 
     const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-24&end_date=2026-10-25&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
-//kontrollerar om datan finns, if sats 
+    //kontrollerar om datan finns, if sats 
 
     if (!asteroidList) {
         return;
@@ -247,19 +247,19 @@ async function fetchAsteroids() {    //asynkron
         // Loopa igenom datumen satta i apin
         for (const date in data.near_earth_objects) {
             const asteroids = data.near_earth_objects[date];
-            
+
             //blir ett kort för varje asteorid här, asteoridcard.  
 
             asteroids.forEach(asteroid => {
                 const card = document.createElement('div');  //tomt div element i datorns minne
                 card.className = 'asteroid-card';
 
-                   //asteorider som har varning nasa skickar med ja/nej 
+                //asteorider som har varning nasa skickar med ja/nej 
                 if (asteroid.is_potentially_hazardous_asteroid) {
                     card.classList.add('asteroid-card-danger');  //så svarar css med rött om varning. 
                 }
 
-                     //asteoridcards blir synliga på skärmen, fylls med informationen. 
+                //asteoridcards blir synliga på skärmen, fylls med informationen. 
                 card.innerHTML =    //html koden stoppas in i nya div elementet som finns sparat. 
                     '<h3>' + asteroid.name + '</h3>' +    //alla + läggs till för info som ska synas. 
                     '<p><strong>Datum:</strong> ' + date + '</p>' +    //mathround avrundar talen som tas emot fr nasa. 
@@ -269,10 +269,10 @@ async function fetchAsteroids() {    //asynkron
                 //if dangerous ternary ja/nej 
 
                 // Lägg till direkt i asteroidList syns inte på skärmen annars utan denna. 
-                asteroidList.appendChild(card); 
+                asteroidList.appendChild(card);
             });
         }
-                     //fetch function asteorids stängs här, om catch error. ligger sista efter genongång övrigt. 
+        //fetch function asteorids stängs här, om catch error. ligger sista efter genongång övrigt. 
     } catch (error) {
         console.error("Fel vid hämtning av asteroider:", error);
         asteroidList.innerHTML = "<p>Kunde inte ladda asteroiddata just nu.</p>";
