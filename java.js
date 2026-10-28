@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (topic3Field.value.trim() === "") {
-                showError(topic3Field, "Sista chansen till nyfikenhet!.");
+                showError(topic3Field, "Sista chansen till rymd- nyfikenhet!.");
                 isFormValid = false;
             } else {
                 clearError(topic3Field);
@@ -194,7 +194,7 @@ async function fetchApod() {
 
         if (data.media_type === "video") {
             const videoElement = document.createElement('iframe');
-            videoElement.src = data.url;
+            videoElement.src = data.url;           //data.url ||  tog bort denna del 
             videoElement.width = "100%";
             videoElement.height = "450px";
             videoElement.style.border = "none";
@@ -203,7 +203,7 @@ async function fetchApod() {
 
         } else {     //ellerbild dagens bild skickas: 
             const imgElement = document.createElement('img');
-            imgElement.src = data.url || data.hdurl;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
+            imgElement.src = data.hdurl;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
             imgElement.alt = data.title;
             imgElement.style.maxWidth = '100%';
             imgElement.style.borderRadius = "8px";
