@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!isFormValid) {
                 return;
             }
-
+//value in här 
             const topic1 = topic1Field.value;
             const topic2 = topic2Field.value;
             const topic3 = topic3Field.value;
@@ -123,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // HJÄLPFUNKTIONER FÖR JAVASCRIPT-VALIDERINGEN
-
 
     function showError(inputElement, messageText) {
         inputElement.classList.add('input-error');   //texten ska bli röd via css
