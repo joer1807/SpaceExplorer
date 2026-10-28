@@ -187,6 +187,7 @@ nav a:hover {
     margin: 0;
     transition: all 0.3s ease;
     align-items: start;
+    min-width: 0;
 
 }
 
@@ -215,6 +216,7 @@ nav a:hover {
 .fun-facts {
     grid-column: span 1;
     line-height: 1.5;
+    Font-size:18px;
 }
 
 /* Båda formulären staplar sina fält på höjden */
