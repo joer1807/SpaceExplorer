@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (topic3Field.value.trim() === "") {
-                showError(topic3Field, "sista chansen till nyfikenhet!.");
+                showError(topic3Field, "Sista chansen till nyfikenhet!.");
                 isFormValid = false;
             } else {
                 clearError(topic3Field);
