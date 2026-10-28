@@ -199,14 +199,19 @@ async function fetchApod() {
             videoElement.height = "450px";
             videoElement.style.border = "none";
             videoElement.style.borderRadius = "8px";
+            videoElement.allowFullscreen = true; // Tillåter helskärmsläge för videospelaren
+            
+
+            videoElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             apodSection.appendChild(videoElement);
 
         } else {     //ellerbild dagens bild skickas: 
             const imgElement = document.createElement('img');
-            imgElement.src = data.hdurl;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
+            imgElement.src = data.hdurl || data.url;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
             imgElement.alt = data.title;
             imgElement.style.maxWidth = '100%';
             imgElement.style.borderRadius = "8px";
+            imgElement.style.height = "auto";
             apodSection.appendChild(imgElement);
         }
 
@@ -220,6 +225,7 @@ async function fetchApod() {
         apodSection.innerHTML = "<h2>Kunde inte ladda rymdbilden just nu.</h2>";
     }
 }
+
 
 // HÄMTA ASTEROIDER FRÅN NASA (NeoWs)
 
