@@ -191,7 +191,6 @@ nav a:hover {
 }
 
 
-
 /* border+skugga så att hörnen blir runda */
 .contact-info:hover,
 .fun-facts:hover,
@@ -455,6 +454,8 @@ nav a:hover {
 
 @media (min-width: 769px) {
 
+
+
     /*hero nav på rad på stor skärm*/
 
     #main-nav ul {
@@ -503,14 +504,19 @@ nav a:hover {
     }
 
     .contact-info,
+    #kontaktformular,
     #best-in-space,
     .fun-facts {
         flex: 1;
         width: auto !important;
+        max-width: calc(33.33% - 10px);
+        min-width: 0;  
     }
 
+    #kontaktformular,
     #best-in-space {
         flex: 1.3;
+
     }
 
     /* Den stora jordbilden till höger tar upp 35% av bredden */
