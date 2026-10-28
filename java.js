@@ -180,8 +180,8 @@ async function fetchApod() {
         const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('serverfel hos NASA: "' + response.statusText + '"');
-        }  
-         //skickar tillbaka en json fil 
+        }
+        //skickar tillbaka en json fil 
         const data = await response.json();
         //ändrar html o visar upp ny text 
         apodSection.innerHTML = '';

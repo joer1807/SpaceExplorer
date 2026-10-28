@@ -23,15 +23,17 @@ header h1 {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 3px;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 
-                 0 0 15px rgba(147, 51, 234, 0.6), 
-                 0 0 30px rgba(59, 130, 246, 0.4);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+        0 0 15px rgba(147, 51, 234, 0.6),
+        0 0 30px rgba(59, 130, 246, 0.4);
 }
 
 header p {
     /* herosectionens text alla sidor*/
-    color: #e2e8f0; /* Lite mjukare vit för bättre kontrast */
-    font-size: 20px; /* Något mindre för att skapa snyggare hierarki till H1 */
+    color: #e2e8f0;
+    /* Lite mjukare vit för bättre kontrast */
+    font-size: 20px;
+    /* Något mindre för att skapa snyggare hierarki till H1 */
     margin: 0;
     font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     letter-spacing: 1px;
@@ -43,7 +45,7 @@ header p {
     font-weight: bold;
     font-family: Arial, sans-serif;
     padding: 15px;
-    display: none;  
+    display: none;
 }
 
 #main-nav.active {
@@ -199,7 +201,8 @@ nav a:hover {
 
 .contact-info img {
     width: 100%;
-    height: 300px; /* Tvingar bilden */
+    height: 300px;
+    /* Tvingar bilden */
     object-fit: cover;
     border-radius: 8px;
 }
@@ -212,7 +215,7 @@ nav a:hover {
 .fun-facts {
     grid-column: span 1;
     line-height: 1.5;
-    Font-size:18px;
+    Font-size: 18px;
 }
 
 /* Båda formulären staplar sina fält på höjden */
@@ -237,7 +240,7 @@ nav a:hover {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical; 
+    resize: vertical;
 }
 
 #kontaktformular input[type="submit"] {
@@ -338,9 +341,9 @@ nav a:hover {
 
 /* Styling för de nya korten som skapas via JavaScript */
 .asteroid-card {
-    background-color: #4676c4; 
+    background-color: #4676c4;
     color: #0c0c0c;
-  
+
     border: 1px solid #333;
     border-radius: 15px;
     padding: 20px;
@@ -357,7 +360,7 @@ nav a:hover {
 /* varje litet kort */
 .asteroid-card h3 {
     margin-top: 0;
-    color: #00bcd4; 
+    color: #00bcd4;
     font-size: 1.2rem;
 }
 
@@ -366,7 +369,7 @@ nav a:hover {
     font-size: 0.9rem;
 }
 
-/*img i asteroid-card*/ 
+/*img i asteroid-card*/
 .asteroid-picture {
     width: 100%;
     height: 180px;
@@ -391,15 +394,17 @@ nav a:hover {
 }
 
 #puff-grid-section-title {
-    font-size: 20px; 
+    font-size: 20px;
     grid-column: 1 / -1;
     color: rgb(17, 12, 12);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
-    margin: 10px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 10px;
     text-align: start;
 }
 
-#puff-1, #puff-2, #puff-3 {
+#puff-1,
+#puff-2,
+#puff-3 {
     background-color: rgba(244, 245, 243, 0.95);
     border: 4px solid rgba(23, 137, 169, 0.5);
     box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
@@ -409,10 +414,12 @@ nav a:hover {
     transition: all 0.3s ease;
     align-items: flex-start;
     font-size: 20px;
-    
+
 }
 
-#puff-1:hover, #puff-2:hover, #puff-3:hover {
+#puff-1:hover,
+#puff-2:hover,
+#puff-3:hover {
     border-color: rgb(23, 137, 169);
     filter: drop-shadow(0 0 10px rgba(23, 137, 169, 0.6)) drop-shadow(0 0 20px rgba(23, 137, 169, 0.3));
     transform: translateY(-2px);
@@ -467,8 +474,9 @@ nav a:hover {
     #menu-toggle {
         display: none;
     }
+
     nav {
-        display:block !important;   
+        display: block !important;
     }
 
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
@@ -506,8 +514,8 @@ nav a:hover {
     #best-in-space,
     .fun-facts {
         flex: 1;
-        width: 0 
-        min-width: 0;  
+        width: 0;
+        min-width: 0;
     }
 
     #kontaktformular,
@@ -523,5 +531,5 @@ nav a:hover {
 
 
 
-   
+
 }
