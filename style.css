@@ -509,7 +509,6 @@ nav a:hover {
     .fun-facts {
         flex: 1;
         width: auto !important;
-        max-width: calc(33.33% - 10px);
         min-width: 0;  
     }
 
