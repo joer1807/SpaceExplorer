@@ -213,7 +213,7 @@ async function fetchApod() {
         textElement.textContent = data.explanation;
         apodSection.appendChild(textElement);
   //felmeddelande om bilden inte hämtas
-  
+
     } catch (error) {
         console.error(error);
         apodSection.innerHTML = "<h2>Kunde inte ladda rymdbilden just nu.</h2>";
@@ -221,44 +221,54 @@ async function fetchApod() {
 }
 
 // HÄMTA ASTEROIDER FRÅN NASA (NeoWs)
-async function fetchAsteroids() {
-    const asteroidList = document.getElementById('asteroid-list');
+
+async function fetchAsteroids() {    //asynkron
+    const asteroidList = document.getElementById('asteroid-list');  //hittar platsen i HTMLKODEN
+
+//apinyckeln här med datum
 
     const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-24&end_date=2026-10-25&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
+
+//kontrollerar om datan finns, if sats 
 
     if (!asteroidList) {
         return;
     }
 
-    try {
+    try {                  //await för väntar svar från nasa
         const response = await fetch(apiUrl);
-        const data = await response.json();
+        const data = await response.json();   //nasas fil görs om från text till js format 
 
         console.log(data);
 
-        // Töm listan först
+        // Töm listan först på gamla asteorider
         asteroidList.innerHTML = '';
 
-        // Loopa igenom datumen
+        // Loopa igenom datumen satta i apin
         for (const date in data.near_earth_objects) {
             const asteroids = data.near_earth_objects[date];
             
+            //blir ett kort för varje asteorid här, asteoridcard.  
+
             asteroids.forEach(asteroid => {
-                const card = document.createElement('div');
+                const card = document.createElement('div');  //tomt div element i datorns minne
                 card.className = 'asteroid-card';
 
+                   //asteorider som har varning nasa skickar med ja/nej 
                 if (asteroid.is_potentially_hazardous_asteroid) {
-                    card.classList.add('asteroid-card-danger');
+                    card.classList.add('asteroid-card-danger');  //så svarar css med rött om varning. 
                 }
 
-                card.innerHTML = 
-                    '<h3>' + asteroid.name + '</h3>' +
-                    '<p><strong>Datum:</strong> ' + date + '</p>' +
+                     //asteoridcards blir synliga på skärmen, fylls med informationen. 
+                card.innerHTML =    //html koden stoppas in i nya div elementet som finns sparat. 
+                    '<h3>' + asteroid.name + '</h3>' +    //alla + läggs till för info som ska synas. 
+                    '<p><strong>Datum:</strong> ' + date + '</p>' +    //mathround avrundar talen som tas emot fr nasa. 
                     '<p><strong>Max diameter:</strong> ' + Math.round(asteroid.estimated_diameter.meters.estimated_diameter_max) + ' meter</p>' +
                     '<p><strong>Missar jorden med:</strong> ' + Math.round(asteroid.close_approach_data[0].miss_distance.kilometers).toLocaleString('sv-SE') + ' km</p>' +
                     '<p><strong>Potentiell RISK vid kollision:</strong> ' + (asteroid.is_potentially_hazardous_asteroid ? "⚠️ Ja" : "✅ Nej") + '</p>';
-                
-                // ÄNDRING: Lägg till direkt i asteroidList istället för listContainer
+                //if dangerous ternary ja/nej 
+
+                // Lägg till direkt i asteroidList syns inte på skärmen annars utan denna. 
                 asteroidList.appendChild(card); 
             });
         }
