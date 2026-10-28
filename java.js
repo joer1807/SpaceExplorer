@@ -163,10 +163,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-}); // Slutar och stänger hela DOMContentLoaded-funktionen perfekt!
+}); // Slutar och stänger hela DOMContentLoaded-funktionen!
 
 
-// HÄMTA DAGENS RYMDBILD FRÅN NASA (APOD) styrs av vad nasa lagt upp
+// HÄMTA DAGENS RYMDBILD FRÅN NASA (APOD) styrs av vad nasa lagt upp för dagen obs! kolla konsolen. 
 
 async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
@@ -175,19 +175,21 @@ async function fetchApod() {
     if (!apodSection) {
         return;
     }
-
+               //om inte fungerar return från nasa svarstext 
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error('serverfel hos NASA: "' + response.statusText + '"');
-        }
+        }   //skickar tillbaka en json fil 
         const data = await response.json();
-
+              //ändrar html o visar upp ny text 
         apodSection.innerHTML = '';
 
         const titleElement = document.createElement('h2');
         titleElement.textContent = "Live in Space: " + data.title;
         apodSection.appendChild(titleElement);
+
+                //nasa anv ibland youtubeformat, om skickas ett anpassas: 
 
         if (data.media_type === "video") {
             const videoElement = document.createElement('iframe');
@@ -197,7 +199,8 @@ async function fetchApod() {
             videoElement.style.border = "none";
             videoElement.style.borderRadius = "8px";
             apodSection.appendChild(videoElement);
-        } else {
+
+        } else {     //ellerbild dagens bild skickas: 
             const imgElement = document.createElement('img');
             imgElement.src = data.url || data.hdurl;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
             imgElement.alt = data.title;
@@ -209,7 +212,8 @@ async function fetchApod() {
         const textElement = document.createElement('p');
         textElement.textContent = data.explanation;
         apodSection.appendChild(textElement);
-
+  //felmeddelande om bilden inte hämtas
+  
     } catch (error) {
         console.error(error);
         apodSection.innerHTML = "<h2>Kunde inte ladda rymdbilden just nu.</h2>";
