@@ -272,7 +272,7 @@ async function fetchAsteroids() {    //asynkron
                 asteroidList.appendChild(card); 
             });
         }
-
+                     //fetch function asteorids stängs här, om catch error. ligger sista efter genongång övrigt. 
     } catch (error) {
         console.error("Fel vid hämtning av asteroider:", error);
         asteroidList.innerHTML = "<p>Kunde inte ladda asteroiddata just nu.</p>";
