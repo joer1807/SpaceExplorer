@@ -29,7 +29,6 @@ header h1 {
                  0 0 30px rgba(59, 130, 246, 0.4);
 }
 
-
 header p {
     /* herosectionens text alla sidor*/
     color: #e2e8f0; /* Lite mjukare vit för bättre kontrast */
@@ -125,7 +124,6 @@ nav a:hover {
     font-size: 20px;
 }
 
-
 #education-table th {
     /* tabell med utbildningar tabellrubrik unikt id */
     background-color: #1789a9;
@@ -192,13 +190,7 @@ nav a:hover {
 
 }
 
-#kontaktformular input[type="text"],
-#kontaktformular input[type="email"],
-#kontaktformular textarea,
-#best-in-space input[type="text"] {
-    width: 100%;
-    box-sizing: border-box;
-}
+
 
 /* border+skugga så att hörnen blir runda */
 .contact-info:hover,
@@ -208,6 +200,13 @@ nav a:hover {
     border-color: rgb(23, 137, 169);
     filter: drop-shadow(0 0 10px rgba(23, 137, 169, 0.6)) drop-shadow(0 0 20px rgba(23, 137, 169, 0.3));
     transform: translateY(-2px);
+}
+
+.contact-info img {
+    width: 100%;
+    height: 300px; /* Tvingar bilden */
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .contact-info {
@@ -235,11 +234,13 @@ nav a:hover {
 #kontaktformular input[type="email"],
 #kontaktformular textarea {
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    resize: vertical; 
 }
 
 #kontaktformular input[type="submit"] {
@@ -262,6 +263,7 @@ nav a:hover {
 #best-in-space input[type="email"],
 #best-in-space textarea {
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     padding: 8px;
     margin-bottom: 10px;
@@ -309,7 +311,6 @@ nav a:hover {
 }
 
 /* ASTEROID SEKTION i apod.html */
-
 
 #asteroid-section {
     background-color: rgba(163, 188, 237, 0.9);
@@ -421,7 +422,6 @@ nav a:hover {
 }
 
 
-
 /*footer styligen*/
 .footer {
     background-color: rgb(15, 15, 25);
@@ -453,7 +453,6 @@ nav a:hover {
 
 /*=========obs media börjar här======*/
 
-
 @media (min-width: 769px) {
 
     /*hero nav på rad på stor skärm*/
@@ -472,7 +471,6 @@ nav a:hover {
     nav {
         display:block !important;   
     }
-
 
     /* Låter listorna och formulären flyta in på sina rätta grid-platser */
     .fun-facts {
@@ -519,7 +517,6 @@ nav a:hover {
     .contact-image-box {
         width: 35% !important;
     }
-
 
 
 
