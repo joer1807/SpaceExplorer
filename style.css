@@ -2,7 +2,6 @@
     /* översta hero-sektionen alla sidor*/
     background: linear-gradient(135deg, rgba(27, 17, 58, 0.6), rgba(11, 7, 30, 0.8)), url('images-design/space.jpg') no-repeat center center/cover;
     min-height: 180px;
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,10 +62,6 @@ nav ul {
     gap: 15px;
 }
 
-nav ul li {
-    /* navigeringsmenyns lista element */
-    margin: 0;
-}
 
 nav a {
     /* navigeringsmenyns länkar */
@@ -208,6 +203,7 @@ nav a:hover {
     object-fit: cover;
     border-radius: 8px;
 }
+
 
 .contact-info {
     grid-column: span 1;
