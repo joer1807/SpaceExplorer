@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const topic2 = topic2Field.value;
             const topic3 = topic3Field.value;
 
-            // Skapa tacktexten genom att plussa ihop strängar
+            // Skapa tacktexten genom att plussa ihop svaren fr anv.
             const returnMessage = '<h2>Tack för dina frågor! 🚀</h2>' +
                 '<p>Våra rymdexperter har tagit emot dina funderingar om:</p>' +
                 '<ul>' +
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //KONTAKTFORMULÄR (#kontaktformular)
     const kontaktForm = document.getElementById('kontaktformular');
 
-    // Kolla så att kontaktformuläret 
+    // Kolla så att kontaktformuläret fylls i
     if (kontaktForm) {
         kontaktForm.addEventListener('submit', function (event) {
             // Stoppa sidan från att laddas om när man trycker på skicka
@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const messageField = document.getElementById('message');
 
             let isContactValid = true;
+
+            //om inget värde i kommer meddelande till användaren o clear om finns värde
 
             if (nameField.value.trim() === "") {
                 showError(nameField, "Vänligen fyll i ditt namn.");
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Hämta texten från rutorna och bygg tackmeddelandet
+            // Hämta texten från rutorna o lägg in anv mejl och formatera tackmeddelandet
             const tackMessage = '<h2>Tack för ditt meddelande! 🚀</h2>' +
                 '<p>Vi har tagit emot ditt meddelande och återkommer till <strong>' + emailField.value + '</strong> så snart vi kan.</p>' +
                 '<div style="background: rgba(23, 137, 169, 0.1); padding: 10px; border-radius: 4px; margin-top: 10px;">' +
@@ -121,8 +123,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // HJÄLPFUNKTIONER FÖR JAVASCRIPT-VALIDERINGEN
+
+
     function showError(inputElement, messageText) {
-        inputElement.classList.add('input-error');
+        inputElement.classList.add('input-error');   //texten ska bli röd via css
         const formGroup = inputElement.closest('.form-group');
         if (formGroup) {
             const errorSpan = formGroup.querySelector('.error-text');
@@ -131,14 +135,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
-
+                //när användaren skrivit in fältet tas felmeddelandet bort. 
     function clearError(inputElement) {
-        inputElement.classList.remove('input-error');
+        inputElement.classList.remove('input-error');  //det röda försvinner igen. 
         const formGroup = inputElement.closest('.form-group');
         if (formGroup) {
             const errorSpan = formGroup.querySelector('.error-text');
             if (errorSpan) {
-                errorSpan.textContent = '';
+                errorSpan.textContent = '';  //fältet i form tomt igen. 
             }
         }
     }
