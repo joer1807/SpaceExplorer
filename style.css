@@ -321,6 +321,8 @@ nav a:hover {
     margin: 20px 0;
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ASTEROID SEKTION i apod.html */
@@ -337,6 +339,7 @@ nav a:hover {
     gap: 15px;
     padding: 15px;
     width: 100%;
+    flex: 1; /* listan fyller ut boxen vertikalt */
 }
 
 /* Styling för de nya korten som skapas via JavaScript */
@@ -389,6 +392,8 @@ nav a:hover {
     margin: 20px 0;
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Rubriken i APOD */
@@ -426,11 +431,12 @@ nav a:hover {
 
 /* förklaringstexten under bilden */
 #apod-beskrivning {
-    font-size: 1.32rem;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1.7;
     color: #1c1c1c;
-    margin-top: 15px;
+    margin-top: 20px;
     text-align: left;
+    flex: 1; /* textfältet fyller ut boxen vertikalt */
 }
 
 
@@ -590,7 +596,7 @@ nav a:hover {
     .apod-page-wrapper {
         display: flex;
         gap: 25px;
-        align-items: flex-start;
+        align-items: stretch;
         width: 100%;
         box-sizing: border-box;
     }
