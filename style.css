@@ -408,6 +408,13 @@ nav a:hover {
     flex-direction: column;
 }
 
+.space-box h2 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    color: #ffffff; /* Ändrat till vit text */
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); /* Svagt ljusblått glöd */
+}
+
 .apod-page-wrapper {
     width: 100%; 
     display: flex;
@@ -450,10 +457,11 @@ nav a:hover {
 
 /* Dagens bild/video rubrik inuti APOD */
 #apod-title {
-    color: #1a365d;
+    color: #7dd3fc; /* Ljusblå undertitel */
     font-size: 1.3rem;
     margin-top: 10px;
     margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(56, 189, 248, 0.3);
 }
 
 /* Behållaren för bilden eller videon */
@@ -477,11 +485,24 @@ nav a:hover {
 /* förklaringstexten under bilden */
 #apod-beskrivning {
     font-size: 1.2rem;
-    line-height: 1.7;
-    color: #1c1c1c;
+    line-height: 1.7;  
+    color: #e2e8f0; /* Mjukt vit/ljusgrå text */
     margin-top: 20px;
     text-align: left;
     flex: 1; /* textfältet fyller ut boxen vertikalt */
+}
+/*beskrvningen i apod*/
+
+#apod-beskrivning a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+/*länkarna ändrar färg */
+
+#apod-beskrivning a:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
 }
 
 
