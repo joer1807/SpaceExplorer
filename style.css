@@ -406,14 +406,14 @@ nav a:hover {
     /* RYMD-TEMA: */
     background-color: #020617;
     background-image: 
+        radial-gradient(white, rgba(255, 255, 255, 0.2) 1.5px, transparent 30px),          /* Små stjärnor typ 1 */
+        radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 20px),          /* Små stjärnor typ 2 */
         radial-gradient(circle at 20% 30%, rgba(23, 137, 169, 0.3) 0%, transparent 50%), /* Turkost rymdmoln */
         radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.25) 0%, transparent 50%), /* Lila rymdmoln */
-        radial-gradient(circle at center, #0f172a 0%, #020617 100%),                       /* Din djupa grundgradient */
-        radial-gradient(white, rgba(255, 255, 255, 0.2) 1.5px, transparent 30px),          /* Små stjärnor typ 1 */
-        radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 20px);           /* Små stjärnor typ 2 */
+        radial-gradient(circle at center, #0f172a 0%, #020617 100%);                       /* Din djupa grundgradient */
     
-    background-size: 100% 100%, 100% 100%, 100% 100%, 250px 250px, 400px 350px;
-    background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
+    background-size: 250px 250px, 400px 350px, 100% 100%, 100% 100%, 100% 100%;
+    background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
     
     border-radius: 16px;
     
