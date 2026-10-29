@@ -204,6 +204,11 @@ async function fetchApod() {
         }
         //skickar tillbaka en json fil 
         const data = await response.json();
+        
+        //huvudrubrik med info 
+        if (mainTitleElement) {
+            mainTitleElement.textContent = `Live in Space: NASA Astronomy Picture (${data.date})`;
+        }
         // Sätter titeln i <h3>
         titleElement.textContent = data.title;
 
