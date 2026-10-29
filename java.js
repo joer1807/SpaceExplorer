@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!isFormValid) {
                 return;
             }
-//value in här 
+            //value in här 
             const topic1 = topic1Field.value;
             const topic2 = topic2Field.value;
             const topic3 = topic3Field.value;
@@ -173,6 +173,8 @@ async function fetchApod() {
     const mediaContainer = document.getElementById('apod-content');
     const textElement = document.getElementById('apod-beskrivning');
 
+
+    //kontroll av att elementen finns på sidan
     if (!titleElement || !mediaContainer || !textElement) {
         return;
     }
@@ -184,14 +186,14 @@ async function fetchApod() {
     const dag = String(idag.getDate()).padStart(2, '0');
     const datumStrang = `${aar}${maanad}${dag}`;
 
-    //Bygger API-urlen dynamiskt med dagens datum
-        const apiUrl = `https://science.nasa.gov/wp-json/wp/v2/apod-basic/${datumStrang}`;
-        
-        //mina tester 'https://science.nasa.gov/wp-json/wp/v2/apod-basic/261029'
-        
-        //tester 'https://science.nasa.gov/wp-json/wp/v2/apod-basic/${datumStrang}'
+    //Bygger API-urlen  med dagens datum
+    const apiUrl = `https://science.nasa.gov/wp-json/wp/v2/apod-basic/${datumStrang}`;
 
-        
+    //mina tester 'https://science.nasa.gov/wp-json/wp/v2/apod-basic/261029'
+
+    //tester 'https://science.nasa.gov/wp-json/wp/v2/apod-basic/${datumStrang}'
+
+
 
     // om inte fungerar return från nasa svarstext 
     try {
@@ -201,23 +203,23 @@ async function fetchApod() {
         }
         //skickar tillbaka en json fil 
         const data = await response.json();
-        //ändrar html o visar upp ny text 
-        apodSection.innerHTML = '';
+        // Sätter titeln i <h3>
+        titleElement.textContent = data.title;
 
-        const titleElement = document.createElement('h2');
-        titleElement.textContent = "Live in Space: " + data.title;
-        apodSection.appendChild(titleElement);
+        // Rensar texten "Laddar dagens bild..."
+        mediaContainer.innerHTML = '';
+
 
         //nasa anv ibland youtubeformat, om skickas ett anpassas: 
         if (data.media_type === "video") {
-            // Försök hämta video-källa i html-koden med regex
+            // Försök hämta video-källa i html-koden 
             const match = data.basic_html ? data.basic_html.match(/<source src="([^"]+)"/) : null;
-            
-            // Om matchning hittas tar vi grupp 1 ([1]), annars faller vi tillbaka på data.url
+
+            // Om matchning hittas tar vi grupp 1 ([1]), annars faller tillbaka på data.url
             const videoUrl = match ? match[1] : data.url;
 
             const videoElement = document.createElement('video');
-            videoElement.src = videoUrl; 
+            videoElement.src = videoUrl;
             videoElement.width = 800; // Sätts som numeriskt värde i JS
             videoElement.style.maxWidth = "100%"; // Gör videon följsam på mindre skärmar
             videoElement.style.border = "none";
@@ -229,30 +231,30 @@ async function fetchApod() {
             videoElement.loop = true;
             videoElement.controls = true;
 
-            apodSection.appendChild(videoElement);
+            //lägger till videon i min div jag skapat i html
+            mediaContainer.appendChild(videoElement);
 
-        } else {     //eller bild dagens bild skickas: 
+        } else {     //eller om apod/bild dagens skickas: 
             const imgElement = document.createElement('img');
             imgElement.src = data.hdurl || data.url;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
             imgElement.alt = data.title;
             imgElement.style.maxWidth = '100%';
             imgElement.style.borderRadius = "8px";
             imgElement.style.height = "auto";
-            apodSection.appendChild(imgElement);
-        }
 
-        const textElement = document.createElement('p');
-        // Ändrat till innerHTML så att NASA:s inbäddade länkar fungerar och går att klicka på
-        textElement.innerHTML = data.explanation; 
-        apodSection.appendChild(textElement);
-        //felmeddelande om bilden inte hämtas
+            //lägger in bilden i min div från html 
+            mediaContainer.appendChild(imgElement);
+        }
+        //beskrvningen läggs till 
+        textElement.innerHTML = data.explanation;
 
     } catch (error) {
         console.error(error);
-        apodSection.innerHTML = "<h2>Kunde inte ladda rymdbilden just nu.</h2>";
+        titleElement.textContent = "Kunde inte ladda rymdbilden just nu";
+        textElement.textContent = "Ett fel uppstod vid hämtning av data från NASA.";
     }
 }
-
+fetchApod();
 
 // HÄMTA ASTEROIDER FRÅN NASA (NeoWs)
 
