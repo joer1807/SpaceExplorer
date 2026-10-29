@@ -169,12 +169,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function fetchApod() {
     const apodSection = document.getElementById('apod-section');
-    const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
-
     if (!apodSection) {
         return;
     }
-    //om inte fungerar return från nasa svarstext 
+
+    // Hämtar dagens datum automatiskt och formaterar till ÅÅMMDD
+    const idag = new Date();
+    const aar = String(idag.getFullYear()).slice(-2);
+    const maanad = String(idag.getMonth() + 1).padStart(2, '0');
+    const dag = String(idag.getDate()).padStart(2, '0');
+    const datumStrang = `${aar}${maanad}${dag}`;
+
+    //Bygger API-urlen dynamiskt med dagens datum
+        const apiUrl = `https://science.nasa.gov/wp-json/wp/v2/apod-basic/${datumStrang}`;
+        
+        //mina tester 'https://science.nasa.gov/wp-json/wp/v2/apod-basic/261029'
+        
+        //tester 'https://science.nasa.gov/wp-json/wp/v2/apod-basic/${datumStrang}'
+
+        
+
+    // om inte fungerar return från nasa svarstext 
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -190,18 +205,26 @@ async function fetchApod() {
         apodSection.appendChild(titleElement);
 
         //nasa anv ibland youtubeformat, om skickas ett anpassas: 
-
         if (data.media_type === "video") {
-            const videoElement = document.createElement('iframe');
-            videoElement.src = data.url;           //data.url ||  tog bort denna del 
-            videoElement.width = "100%";
-            videoElement.height = "450px";
+            // Försök hämta video-källa i html-koden med regex
+            const match = data.basic_html ? data.basic_html.match(/<source src="([^"]+)"/) : null;
+            
+            // Om matchning hittas tar vi grupp 1 ([1]), annars faller vi tillbaka på data.url
+            const videoUrl = match ? match[1] : data.url;
+
+            const videoElement = document.createElement('video');
+            videoElement.src = videoUrl; 
+            videoElement.width = 800; // Sätts som numeriskt värde i JS
+            videoElement.style.maxWidth = "100%"; // Gör videon följsam på mindre skärmar
             videoElement.style.border = "none";
             videoElement.style.borderRadius = "8px";
-            videoElement.allowFullscreen = true; // Tillåter helskärmsläge för videospelaren
-            
 
-            videoElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            // För att videon ska starta automatiskt och upprepa videon
+            videoElement.autoplay = true;
+            videoElement.muted = true;
+            videoElement.loop = true;
+            videoElement.controls = true;
+
             apodSection.appendChild(videoElement);
 
         } else {     //eller bild dagens bild skickas: 
@@ -215,7 +238,8 @@ async function fetchApod() {
         }
 
         const textElement = document.createElement('p');
-        textElement.textContent = data.explanation;
+        // Ändrat till innerHTML så att NASA:s inbäddade länkar fungerar och går att klicka på
+        textElement.innerHTML = data.explanation; 
         apodSection.appendChild(textElement);
         //felmeddelande om bilden inte hämtas
 
