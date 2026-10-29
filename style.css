@@ -418,7 +418,6 @@ nav a:hover {
 #apod-content img, 
 #apod-content video {
     width: 100%;
-    max-width: 750px; /* Förhindrar att bilden blir för stor på stora skärmar */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -587,7 +586,28 @@ nav a:hover {
         width: 35% !important;
     }
 
-
-
-
+/*  APOD DESKTOP LAYOUT */
+    .apod-page-wrapper {
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    #apod-section {
+        flex: 1; /* APOD-sektionen blir lite bredare (tar 60% av ytan) */
+        margin: 0;
+    }
+    
+    #asteroid-section {
+        flex: 1; /* Asteroid-sektionen tar resterande del (ca 40%) */
+        margin: 0;
+    }
+    #apod-content img, 
+    #apod-content video {
+        width: 50% /* ännu mindre */
+    }
 }
+
+
