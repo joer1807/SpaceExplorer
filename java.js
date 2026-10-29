@@ -169,10 +169,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function fetchApod() {
     //hämtar exakta elementen från html 
+    const mainTitleElement = document.getElementById('apod-main-title');
     const titleElement = document.getElementById('apod-title');
     const mediaContainer = document.getElementById('apod-content');
     const textElement = document.getElementById('apod-beskrivning');
-
+    
 
      //kontroll av att elementen finns på sidan
     if (!titleElement || !mediaContainer || !textElement) {
