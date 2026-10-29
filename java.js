@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!isFormValid) {
                 return;
             }
-//value in här 
+            //value in här 
             const topic1 = topic1Field.value;
             const topic2 = topic2Field.value;
             const topic3 = topic3Field.value;
@@ -168,13 +168,35 @@ document.addEventListener('DOMContentLoaded', function () {
 // HÄMTA DAGENS RYMDBILD FRÅN NASA (APOD) styrs av vad nasa lagt upp för dagen obs! kolla konsolen. 
 
 async function fetchApod() {
-    const apodSection = document.getElementById('apod-section');
-    const apiUrl = 'https://api.nasa.gov/planetary/apod?api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
+    //hämtar exakta elementen från html 
+    const mainTitleElement = document.getElementById('apod-main-title');
+    const titleElement = document.getElementById('apod-title');
+    const mediaContainer = document.getElementById('apod-content');
+    const textElement = document.getElementById('apod-beskrivning');
+    
 
-    if (!apodSection) {
+     //kontroll av att elementen finns på sidan
+    if (!titleElement || !mediaContainer || !textElement) {
         return;
     }
-    //om inte fungerar return från nasa svarstext 
+
+    // Hämtar dagens datum automatiskt och formaterar till ÅÅMMDD
+    const idag = new Date();
+    const aar = String(idag.getFullYear()).slice(-2);
+    const maanad = String(idag.getMonth() + 1).padStart(2, '0');
+    const dag = String(idag.getDate()).padStart(2, '0');
+    const datumStrang = `${aar}${maanad}${dag}`;
+
+    //Bygger API-urlen  med dagens datum
+    const apiUrl = `https://science.nasa.gov/wp-json/wp/v2/apod-basic/${datumStrang}`;
+
+    //mina tester 'https://science.nasa.gov/wp-json/wp/v2/apod-basic/261029'
+
+    //tester 'https://science.nasa.gov/wp-json/wp/v2/apod-basic/${datumStrang}'
+
+
+
+    // om inte fungerar return från nasa svarstext 
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -182,49 +204,63 @@ async function fetchApod() {
         }
         //skickar tillbaka en json fil 
         const data = await response.json();
-        //ändrar html o visar upp ny text 
-        apodSection.innerHTML = '';
+        
+        //huvudrubrik med info 
+        if (mainTitleElement) {
+            mainTitleElement.textContent = `Live in Space: NASA Astronomy Picture (${data.date})`;
+        }
+        // Sätter titeln i <h3>
+        titleElement.textContent = data.title;
 
-        const titleElement = document.createElement('h2');
-        titleElement.textContent = "Live in Space: " + data.title;
-        apodSection.appendChild(titleElement);
+        // Rensar texten "Laddar dagens bild..."
+        mediaContainer.innerHTML = '';
+
 
         //nasa anv ibland youtubeformat, om skickas ett anpassas: 
-
         if (data.media_type === "video") {
-            const videoElement = document.createElement('iframe');
-            videoElement.src = data.url;           //data.url ||  tog bort denna del 
-            videoElement.width = "100%";
-            videoElement.height = "450px";
+            // Försök hämta video-källa i html-koden 
+            const match = data.basic_html ? data.basic_html.match(/<source src="([^"]+)"/) : null;
+
+            // Om matchning hittas tar vi grupp 1 ([1]), annars faller tillbaka på data.url
+            const videoUrl = match ? match[1] : data.url;
+
+            const videoElement = document.createElement('video');
+            videoElement.src = videoUrl;
+            videoElement.width = 800; // Sätts som numeriskt värde i JS
+            videoElement.style.maxWidth = "100%"; // Gör videon följsam på mindre skärmar
             videoElement.style.border = "none";
             videoElement.style.borderRadius = "8px";
-            videoElement.allowFullscreen = true; // Tillåter helskärmsläge för videospelaren
-            
 
-            videoElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            apodSection.appendChild(videoElement);
+            // För att videon ska starta automatiskt och upprepa videon
+            videoElement.autoplay = true;
+            videoElement.muted = true;
+            videoElement.loop = true;
+            videoElement.controls = true;
 
-        } else {     //eller bild dagens bild skickas: 
+            //lägger till videon i min div jag skapat i html
+            mediaContainer.appendChild(videoElement);
+
+        } else {     //eller om apod/bild dagens skickas: 
             const imgElement = document.createElement('img');
             imgElement.src = data.hdurl || data.url;                      //denna kod är för att hämta bilden från data.url eller data.hdurl om data.url saknas
             imgElement.alt = data.title;
             imgElement.style.maxWidth = '100%';
             imgElement.style.borderRadius = "8px";
             imgElement.style.height = "auto";
-            apodSection.appendChild(imgElement);
-        }
 
-        const textElement = document.createElement('p');
-        textElement.textContent = data.explanation;
-        apodSection.appendChild(textElement);
-        //felmeddelande om bilden inte hämtas
+            //lägger in bilden i min div från html 
+            mediaContainer.appendChild(imgElement);
+        }
+        //beskrvningen läggs till 
+        textElement.innerHTML = data.explanation;
 
     } catch (error) {
         console.error(error);
-        apodSection.innerHTML = "<h2>Kunde inte ladda rymdbilden just nu.</h2>";
+        titleElement.textContent = "Kunde inte ladda rymdbilden just nu";
+        textElement.textContent = "Ett fel uppstod vid hämtning av data från NASA.";
     }
 }
-
+fetchApod();
 
 // HÄMTA ASTEROIDER FRÅN NASA (NeoWs)
 
