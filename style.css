@@ -396,6 +396,39 @@ nav a:hover {
     flex-direction: column;
 }
 
+.apod-page-wrapper {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px;
+    
+    /* RYMD-TEMA: */
+    background-color: #020617;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(23, 137, 169, 0.3) 0%, transparent 50%), /* Turkost rymdmoln */
+        radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.25) 0%, transparent 50%), /* Lila rymdmoln */
+        radial-gradient(circle at center, #0f172a 0%, #020617 100%),                       /* Din djupa grundgradient */
+        radial-gradient(white, rgba(255, 255, 255, 0.2) 1.5px, transparent 30px),          /* Små stjärnor typ 1 */
+        radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 20px);           /* Små stjärnor typ 2 */
+    
+    background-size: 100% 100%, 100% 100%, 100% 100%, 250px 250px, 400px 350px;
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
+    
+    border-radius: 16px;
+    
+    /*  Gjort kanten tjockare (3px) och mycket starkare i färgen */
+    border: 3px solid rgba(56, 189, 248, 0.7); 
+    
+    /* RYMDGLÖD: */
+    box-shadow: 0 0 50px rgba(23, 137, 169, 0.5), 
+                inset 0 0 40px rgba(0, 0, 0, 0.9);   
+                
+    max-width: 100%;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
 /* Rubriken i APOD */
 #apod-section h2 {
     font-size: 24px;
@@ -594,6 +627,8 @@ nav a:hover {
 
 /*  APOD DESKTOP LAYOUT */
     .apod-page-wrapper {
+        flex-direction: row;
+        align-items: stretch;
         display: flex;
         gap: 25px;
         align-items: stretch;
