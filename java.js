@@ -174,7 +174,7 @@ async function fetchApod() {
     const textElement = document.getElementById('apod-beskrivning');
 
 
-    //kontroll av att elementen finns på sidan
+     //kontroll av att elementen finns på sidan
     if (!titleElement || !mediaContainer || !textElement) {
         return;
     }
