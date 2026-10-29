@@ -168,8 +168,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // HÄMTA DAGENS RYMDBILD FRÅN NASA (APOD) styrs av vad nasa lagt upp för dagen obs! kolla konsolen. 
 
 async function fetchApod() {
-    const apodSection = document.getElementById('apod-section');
-    if (!apodSection) {
+    //hämtar exakta elementen från html 
+    const titleElement = document.getElementById('apod-title');
+    const mediaContainer = document.getElementById('apod-content');
+    const textElement = document.getElementById('apod-beskrivning');
+
+    if (!titleElement || !mediaContainer || !textElement) {
         return;
     }
 
