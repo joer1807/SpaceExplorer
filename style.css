@@ -377,11 +377,61 @@ nav a:hover {
     border-radius: 8px;
 }
 
-/* skapar en apod content för apit*/
-
-#apod-content { 
 
 
+/* APOD SEKTION i apod.html  */
+#apod-section {
+    background-color: rgba(163, 188, 237, 0.9);
+    border: 4px solid rgba(23, 137, 169, 0.5);
+    box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Rubriken i APOD */
+#apod-section h2 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    color: rgb(17, 12, 12);
+}
+
+/* Dagens bild/video rubrik inuti APOD */
+#apod-title {
+    color: #1a365d;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Behållaren för bilden eller videon */
+#apod-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerar bilden horisontellt */
+    width: 100%;
+}
+
+/* videon snygg inramning */
+#apod-content img, 
+#apod-content video {
+    width: 100%;
+    max-width: 750px; /* Förhindrar att bilden blir för stor på stora skärmar */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(23, 137, 169, 0.3);
+}
+
+/* förklaringstexten under bilden */
+#apod-beskrivning {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #1c1c1c;
+    margin-top: 15px;
+    text-align: left;
 }
 
 
