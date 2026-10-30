@@ -596,7 +596,7 @@ nav a:hover {
     font-size: 20px;
     grid-column: 1 / -1;
     color: rgb(17, 12, 12);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     margin: 10px 0;
     text-align: start;
     overflow-wrap: anywhere;
@@ -614,11 +614,20 @@ nav a:hover {
     transition: all 0.3s ease;
     align-items: flex-start;
     font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     min-width: 0;            
     overflow-wrap: anywhere; 
     width: 100%; 
 
+}
+
+#puff-1 h3,
+#puff-2 h3, 
+#puff-3 h3 {
+    font-size: 18px;
+    margin-top: 0;
+    color: rgb(17, 12, 12);
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
 }
 
 #puff-1:hover,
@@ -635,7 +644,7 @@ nav a:hover {
     background-color: rgb(15, 15, 25);
     padding: 30px 15px;
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     border-top: 3px solid #1789a9;
     margin-top: 30px;
     display: flex;
