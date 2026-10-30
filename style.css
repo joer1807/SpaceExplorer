@@ -327,6 +327,7 @@ nav a:hover {
 
 /* ASTEROID SEKTION i apod.html */
 #asteroid-section h2 {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     font-size: 24px;
     margin: 0 0 20px 0;
     color: rgb(17, 12, 12);
@@ -335,9 +336,10 @@ nav a:hover {
 /* ASTEROID SEKTION i apod.html */
 #asteroid-list {
     display: grid !important;
+
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
     gap: 15px;
-    padding: 15px;
+    
     width: 100%;
     flex: 1; /* listan fyller ut boxen vertikalt */
 }
