@@ -383,8 +383,6 @@ nav a:hover {
     
 }
 
-
-
 /* APOD SEKTION i apod.html  */
 #apod-section {
     background-color: rgba(163, 188, 237, 0.9);
@@ -530,9 +528,10 @@ nav a:hover {
     display: block;
     width: 100%;             
     overflow: hidden;       
-    margin: 0;
-    padding-top: 20px;      
-    padding-bottom: 20px;
+    margin-top: -25px;    /*för att få samma padding, denna påverkas av krinliggande element*/
+    margin-bottom: 0px;
+    padding-top: 0px;      
+    padding-bottom: 5px;
     padding-left: 0;
     padding-right: 0;
 }
