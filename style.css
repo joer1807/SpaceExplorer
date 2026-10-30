@@ -356,7 +356,7 @@ nav a:hover {
 
 /* hovrar över ett kort */
 .asteroid-card:hover {
-    .asteroid-card: hover transform: translateY(-5px);
+    transform: translateY(-5px);
     /* Lyfte själva kortet 5px uppåt */
     border-color: #00bcd4;
 }
@@ -604,7 +604,7 @@ nav a:hover {
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-top: 3px solid #1789a9;
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
