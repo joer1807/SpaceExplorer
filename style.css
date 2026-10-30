@@ -349,7 +349,7 @@ nav a:hover {
     background-color: #4676c4;
     color: #0c0c0c;
 font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-    border: 1px solid #333;
+    border: 3px solid #333;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -358,8 +358,9 @@ font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
 
 /* hovrar över ett kort */
 .asteroid-card:hover {
-    transform: translateY(-5px);
-    border-color: #00bcd4;
+    .asteroid-card:hover 
+    transform: translateY(-5px); /* Lyfte själva kortet 5px uppåt */
+    border-color: #00bcd4;  
 }
 
 /* varje litet kort */
