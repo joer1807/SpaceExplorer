@@ -318,7 +318,7 @@ nav a:hover {
     box-shadow: 0 10px 30px rgba(23, 137, 169, 0.2);
     border-radius: 10px;
     width: 100%;
-    
+
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -380,7 +380,7 @@ nav a:hover {
     height: 180px;
     object-fit: cover;
     border-radius: 8px;
-    
+
 }
 
 /* APOD SEKTION i apod.html  */
@@ -523,14 +523,16 @@ nav a:hover {
     color: #7dd3fc;
     text-decoration: underline;
 }
+
 /*behållaren img ligger in i apod under asteoridcards*/
 .asteroid-container {
     display: block;
-    width: 100%;             
-    overflow: hidden;       
-    margin-top: -25px;    /*för att få samma padding, denna påverkas av krinliggande element*/
+    width: 100%;
+    overflow: hidden;
+    margin-top: -25px;
+    /*för att få samma padding, denna påverkas av krinliggande element*/
     margin-bottom: 0px;
-    padding-top: 0px;      
+    padding-top: 0px;
     padding-bottom: 5px;
     padding-left: 0;
     padding-right: 0;
@@ -539,11 +541,11 @@ nav a:hover {
 
 /*bilden mellan asteoridcards och footer*/
 .asteroid-picture {
-     width: 100%;           
-    height: 400px;           
-    object-fit: cover;       
-    object-position: center; 
-    display: block;     
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 

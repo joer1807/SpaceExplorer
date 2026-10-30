@@ -173,9 +173,9 @@ async function fetchApod() {
     const titleElement = document.getElementById('apod-title');
     const mediaContainer = document.getElementById('apod-content');
     const textElement = document.getElementById('apod-beskrivning');
-    
 
-     //kontroll av att elementen finns på sidan
+
+    //kontroll av att elementen finns på sidan
     if (!titleElement || !mediaContainer || !textElement) {
         return;
     }
@@ -204,7 +204,7 @@ async function fetchApod() {
         }
         //skickar tillbaka en json fil 
         const data = await response.json();
-        
+
         //huvudrubrik med info 
         if (mainTitleElement) {
             mainTitleElement.textContent = `Live in Space: NASA Astronomy Picture (${data.date})`;
