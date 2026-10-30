@@ -28,6 +28,10 @@ header h1 {
         0 0 30px rgba(59, 130, 246, 0.4);
 }
 
+  header h1.long-title {
+    font-size: clamp(30px, 7vw, 40px);
+}
+
 header p {
     /* herosectionens text alla sidor*/
     color: #e2e8f0;
