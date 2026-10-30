@@ -38,7 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (topic3Field.value.trim() === "") {
-                showError(topic3Field, "Sista chansen till rymd- nyfikenhet!.");
+                showError(topic3Field, "Vi behöver din mejl så vi kan svara på dina funderingar");
+                isFormValid = false;
+            }else if (!emailPattern.test(topic3Field.value.trim())){
+                showError(topic3Field, "Vänligen fyll i din mejladress");
                 isFormValid = false;
             } else {
                 clearError(topic3Field);
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!isFormValid) {
                 return;
             }
-            //value in här 
+            //value in här om allt i fyllt då. 
             const topic1 = topic1Field.value;
             const topic2 = topic2Field.value;
             const topic3 = topic3Field.value;
