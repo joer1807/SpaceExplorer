@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Skapa tacktexten genom att plussa ihop svaren fr anv.
             const returnMessage = '<h2>Tack för dina frågor! 🚀</h2>' +
-                '<p>Våra rymdexperter har tagit emot dina funderingar om:</p>' +
+                '<p>Våra rymdexperter har tagit emot dina funderingar och din email:</p>' +
                 '<ul>' +
                 '<li><strong>' + topic1 + '</strong></li>' +
                 '<li><strong>' + topic2 + '</strong></li>' +
