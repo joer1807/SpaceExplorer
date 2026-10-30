@@ -346,7 +346,7 @@ nav a:hover {
 .asteroid-card {
     background-color: #4676c4;
     color: #0c0c0c;
-
+font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     border: 1px solid #333;
     border-radius: 15px;
     padding: 20px;
@@ -362,6 +362,7 @@ nav a:hover {
 
 /* varje litet kort */
 .asteroid-card h3 {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     margin-top: 0;
     color: #00bcd4;
     font-size: 1.2rem;
@@ -409,6 +410,7 @@ nav a:hover {
 }
 
 .space-box h2 {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     font-size: 24px;
     margin: 0 0 20px 0;
     color: #ffffff; /* Ändrat till vit text */
@@ -450,6 +452,7 @@ nav a:hover {
 
 /* Rubriken i APOD */
 #apod-section h2 {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     font-size: 24px;
     margin: 0 0 20px 0;
     color: rgb(17, 12, 12);
@@ -484,6 +487,7 @@ nav a:hover {
 
 /* förklaringstexten under bilden */
 #apod-beskrivning {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     font-size: 1.2rem;
     line-height: 1.7;  
     color: #e2e8f0; /* Mjukt vit/ljusgrå text */
