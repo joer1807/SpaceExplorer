@@ -352,6 +352,7 @@ nav a:hover {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease;
+    overflow-wrap: anywhere;
 }
 
 /* hovrar över ett kort */
@@ -570,6 +571,7 @@ nav a:hover {
     grid-column: 1 / -1;
     color: rgb(17, 12, 12);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
     margin: 10px;
     text-align: start;
 }
@@ -586,6 +588,7 @@ nav a:hover {
     transition: all 0.3s ease;
     align-items: flex-start;
     font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
 
