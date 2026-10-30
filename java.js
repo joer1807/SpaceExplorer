@@ -40,8 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if (topic3Field.value.trim() === "") {
                 showError(topic3Field, "Vi behöver din mejl så vi kan svara på dina funderingar");
                 isFormValid = false;
-            }else if (!emailPattern.test(topic3Field.value.trim())){
-                showError(topic3Field, "Vänligen fyll i din mejladress");
+            } else if (!topic3Field.checkValidity()) {
+                // kollar  om det är en riktig mejl!
+                showError(topic3Field, "Vänligen fyll i en giltig mejladress");
                 isFormValid = false;
             } else {
                 clearError(topic3Field);
