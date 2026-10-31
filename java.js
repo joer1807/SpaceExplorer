@@ -276,7 +276,7 @@ async function fetchAsteroids() {    //asynkron
 
     //apinyckeln här med datum
 
-    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-29&end_date=2026-11-10&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
+    const apiUrl = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-10-29&end_date=2026-11-01&api_key=f9oF5rlwHBDdOOb82h9XmCiiPNNKqFfYuxXpJUqC';
 
     //kontrollerar om datan finns, if sats 
 
