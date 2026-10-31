@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (emailField.value.trim() === "") {
                 showError(emailField, "Vänligen fyll i din e-postadress.");
                 isContactValid = false;
-            } else if (!emailFiels.checkValidity()){    //kollar formatet på mejlen
+            } else if (!emailField.checkValidity()){    //kollar formatet på mejlen
                 showError(emailField, "Vänligen ange en giltig e-postadress.");
                 isContactValid = false;
             } else {
