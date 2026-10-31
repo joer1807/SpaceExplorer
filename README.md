@@ -4,6 +4,8 @@
 
 ### ✨ Upptäck universums hemligheter
 **Space Explorer** är en hemsida som är utvecklad för att hjälpa dig att lära dig mer om rymden och astronomi. Oavsett om du är en nyfiken nybörjare eller en erfaren stjärnskådare, har vi verktygen och informationen som guidar dig genom galaxen.
+
+https://rymdutforskarespaceexplorer.netlify.app/
 ---
 🌌 **Vad vill du utforska idag?**
 * **Vårt solsystem** – Lär känna planeterna, månarna och solen.
