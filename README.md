@@ -1,4 +1,4 @@
-# Välkomna till yttre rymden med oss på Space Explorer! 
+# Välkomna till rymden med oss på Space Explorer! 
 
 <img src="images-design/earth.jpg" alt="Earth" width="200"/>
 
