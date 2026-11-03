@@ -9,67 +9,68 @@ document.addEventListener('DOMContentLoaded', function () {
         fetchAsteroids();
     };
 
-    // RYMDFORMULÄR (#best-in-space)
-    const submitBtn = document.getElementById('space-submit-btn');
-    const bestInSpace = document.getElementById('best-in-space');
+  // RYMDFORMULÄR (#best-in-space)
+const bestInSpace = document.getElementById('best-in-space');
 
-    // Kolla så att rymdformuläret klickas 
-    if (submitBtn && bestInSpace) {
-        submitBtn.addEventListener('click', function () {
-            const topic1Field = document.getElementById('topic1');
-            const topic2Field = document.getElementById('topic2');
-            const topic3Field = document.getElementById('topic3');
+// Kolla så att rymdformuläret klickas 
+if (bestInSpace) {
+    bestInSpace.addEventListener('submit', function (event) {
+        event.preventDefault();
+        
+        const topic1Field = document.getElementById('topic1');
+        const topic2Field = document.getElementById('topic2');
+        const topic3Field = document.getElementById('topic3');
 
-            let isFormValid = true;
+        let isFormValid = true;
 
-            // Kontrollera varje ruta med valid. 
-            if (topic1Field.value.trim() === "") {
-                showError(topic1Field, "Vänligen fyll i rymdfråga 1.");
-                isFormValid = false;
-            } else {
-                clearError(topic1Field);
-            }
+        // Kontrollera varje ruta med valid. 
+        if (topic1Field.value.trim() === "") {
+            showError(topic1Field, "Vänligen fyll i rymdfråga 1.");
+            isFormValid = false;
+        } else {
+            clearError(topic1Field);
+        }
 
-            if (topic2Field.value.trim() === "") {
-                showError(topic2Field, "Passa på att ställa en rymdfråga till!.");
-                isFormValid = false;
-            } else {
-                clearError(topic2Field);
-            }
+        if (topic2Field.value.trim() === "") {
+            showError(topic2Field, "Passa på att ställa en rymdfråga till!.");
+            isFormValid = false;
+        } else {
+            clearError(topic2Field);
+        }
 
-            if (topic3Field.value.trim() === "") {
-                showError(topic3Field, "Vi behöver din mejl så vi kan svara på dina funderingar");
-                isFormValid = false;
-            } else if (!topic3Field.checkValidity()) {
-                // kollar  om det är en riktig mejl!
-                showError(topic3Field, "Vänligen fyll i en giltig mejladress");
-                isFormValid = false;
-            } else {
-                clearError(topic3Field);
-            }
+        if (topic3Field.value.trim() === "") {
+            showError(topic3Field, "Vi behöver din mejl så vi kan svara på dina funderingar");
+            isFormValid = false;
+        } else if (!topic3Field.checkValidity()) {
+            // kollar  om det är en riktig mejl!
+            showError(topic3Field, "Vänligen fyll i en giltig mejladress");
+            isFormValid = false;
+        } else {
+            clearError(topic3Field);
+        }
 
-            if (!isFormValid) {
-                return;
-            }
-            //value in här om allt i fyllt då. 
-            const topic1 = topic1Field.value;
-            const topic2 = topic2Field.value;
-            const topic3 = topic3Field.value;
+        if (!isFormValid) {
+            return;
+        }
+        //value in här om allt i fyllt då. 
+        const topic1 = topic1Field.value;
+        const topic2 = topic2Field.value;
+        const topic3 = topic3Field.value;
 
-            // Skapa tacktexten genom att plussa ihop svaren fr anv.
-            const returnMessage = '<h2>Tack för dina frågor! 🚀</h2>' +
-                '<p>Våra rymdexperter har tagit emot dina funderingar och din email:</p>' +
-                '<ul>' +
-                '<li><strong>' + topic1 + '</strong></li>' +
-                '<li><strong>' + topic2 + '</strong></li>' +
-                '<li><strong>' + topic3 + '</strong></li>' +
-                '</ul>' +
-                '<p>Vi återkommer till dig med spännande svar!</p>';
+        // Skapa tacktexten genom att plussa ihop svaren fr anv.
+        const returnMessage = '<h2>Tack för dina frågor! 🚀</h2>' +
+            '<p>Våra rymdexperter har tagit emot dina funderingar och din email:</p>' +
+            '<ul>' +
+            '<li><strong>' + topic1 + '</strong></li>' +
+            '<li><strong>' + topic2 + '</strong></li>' +
+            '<li><strong>' + topic3 + '</strong></li>' +
+            '</ul>' +
+            '<p>Vi återkommer till dig med spännande svar!</p>';
 
-            // Ändra HTML-innehållet i boxen till tacktexten
-            bestInSpace.innerHTML = returnMessage;
-        });
-    }
+        // Ändra HTML-innehållet i boxen till tacktexten
+        bestInSpace.innerHTML = returnMessage;
+    });
+}
 
     //KONTAKTFORMULÄR (#kontaktformular)
     const kontaktForm = document.getElementById('kontaktformular');
