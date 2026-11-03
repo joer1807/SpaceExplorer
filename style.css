@@ -45,14 +45,14 @@ header p {
 }
 
 #main-nav {
-    /* navigeringsmenyn alla sidor */
+    /* navigeringsmenyn alla sidor gömd på mobilen är standard */
     font-weight: bold;
     font-family: Arial, sans-serif;
     padding: 15px;
     display: none;
 }
 
-#main-nav.active {
+#main-nav.active {      /* navigeringsmenyn alla sidor när den är aktiv om JS lägger till den */
     display: block;
 }
 
@@ -682,9 +682,9 @@ nav a:hover {
 
     }
 
-    /*stora skärmar menu toogle kommer här*/
+    /*stora skärmar menu toogle som göms på stora skärmar*/
 
-    #menu-toggle {
+    #menu-toggle {          /*menyn syns på stora skärmar*/
         display: none;
     }
 

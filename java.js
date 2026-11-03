@@ -130,7 +130,7 @@ if (bestInSpace) {
         });
     }
 
-    // HJÄLPFUNKTIONER FÖR JAVASCRIPT-VALIDERINGEN
+    // HJÄLPFUNKTIONER FÖR JAVASCRIPT-VALIDERINGEN om felaktigt ifyllt 
 
     function showError(inputElement, messageText) {
         inputElement.classList.add('input-error');   //texten ska bli röd via css
@@ -138,7 +138,7 @@ if (bestInSpace) {
         if (formGroup) {
             const errorSpan = formGroup.querySelector('.error-text');
             if (errorSpan) {
-                errorSpan.textContent = messageText;
+                errorSpan.textContent = messageText;   //denna skriver ut texten. 
             }
         }
     }
@@ -170,7 +170,7 @@ if (bestInSpace) {
         });
     }
 
-}); // Slutar och stänger hela DOMContentLoaded-funktionen!
+}); // Slutar och stänger hela DOMContentLoaded-funktionen för första.
 
 
 // HÄMTA DAGENS RYMDBILD FRÅN NASA (APOD) styrs av vad nasa lagt upp för dagen obs! kolla konsolen. 
